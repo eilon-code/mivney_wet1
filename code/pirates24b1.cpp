@@ -1,7 +1,6 @@
 #include "pirates24b1.h"
 
 
-
 Ocean::Ocean()
 {
     
@@ -14,16 +13,23 @@ Ocean::~Ocean()
 
 StatusType Ocean::add_ship(int shipId, int cannons)
 {
-    return StatusType::FAILURE;
+    Ship ship = Ship(shipId, cannons); // maybe add a try/catch ?
+    return m_shipTree.insert(ship);
 }
 
 StatusType Ocean::remove_ship(int shipId)
 {
-    return StatusType::FAILURE;
+    Ship ship = Ship(shipId, 0); // maybe add a try/catch ?
+    return m_shipTree.remove(ship);
 }
 
 StatusType Ocean::add_pirate(int pirateId, int shipId, int treasure)
 {
+    Ship ship = Ship(shipId, 0); // maybe add a try/catch ?
+    output_t<const Ship&> shipOutput = m_shipTree.get(ship);
+    if (shipOutput.status == StatusType.Success) {
+        return ((Ship&)shipOutput.ans).createPirate(pirateId, treasure);
+    }
     return StatusType::FAILURE;
 }
 
