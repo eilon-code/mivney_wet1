@@ -6,11 +6,11 @@
 #include <avl_tree.h>
 #include <pirate_rank.h>
 
-class Ship : Comparable {
+class Ship : public Comparable {
 public:
     Ship(int shipId, int cannons) : m_id(shipId), m_cannons(cannons), m_coinOffset(0), m_richestPirate(nullptr) {};
     Ship(int shipId) : m_id(shipId), m_cannons(-1), m_coinOffset(0), m_richestPirate(nullptr) {} // dumi ship
-    Ship(const Ship&) = delete;
+    // Ship(const Ship&) = delete;
     ~Ship() {
         m_piratesOnShip.~AVLTree();
         m_piratesOnShipOrderedByRichness.~AVLTree();

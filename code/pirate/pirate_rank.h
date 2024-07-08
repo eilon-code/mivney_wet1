@@ -4,7 +4,7 @@
 #include "comparable.h"
 #include "pirate.h"
 
-class PirateRank : Comparable {
+class PirateRank : public Comparable {
 private:
     Pirate* m_pirate;
 
