@@ -10,7 +10,7 @@ AVLTree<T>::~AVLTree() {
 }
 
 template<typename T>
-output_t<const T&> AVLTree<T>::get(const T& key) const {
+output_t<T&> AVLTree<T>::get(int key) const {
     Node<T>* current = root.get();
     while (current != nullptr) {
         if (key < current->key) {
@@ -18,10 +18,10 @@ output_t<const T&> AVLTree<T>::get(const T& key) const {
         } else if (key > current->key) {
             current = current->right.get();
         } else {
-            return output_t<const T&>(current->key);
+            return output_t<T&>(current->key);
         }
     }
-    return output_t<const T&>(StatusType::FAILURE);
+    return output_t<T&>(StatusType::FAILURE);
 }
 
 template<typename T>
@@ -46,7 +46,7 @@ StatusType AVLTree<T>::insert(const T& key) {
 }
 
 template<typename T>
-StatusType AVLTree<T>::remove(const T& key) {
+StatusType AVLTree<T>::remove(int key) {
     try {
         root = removeNode(std::move(root), key);
         return StatusType::SUCCESS;
@@ -56,8 +56,8 @@ StatusType AVLTree<T>::remove(const T& key) {
 }
 
 template<typename T>
-StatusType AVLTree<T>::search(const T& key) const {
-    return get(key).status() == StatusType::SUCCESS ? StatusType::SUCCESS : StatusType::FAILURE;
+StatusType AVLTree<T>::search(int key) const {
+    return get(key).status();
 }
 
 template<typename T>

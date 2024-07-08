@@ -1,5 +1,10 @@
 #include "ship.h"
 
-void Ship::insertPirate(const Pirate &pirate)
+StatusType Ship::removePirate(int pirateId)
+{
+    return StatusType();
+}
+
+StatusType Ship::insertPirate(const Pirate &pirate)
 {
 }

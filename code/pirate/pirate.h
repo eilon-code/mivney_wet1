@@ -7,16 +7,16 @@ class Pirate : Comparable {
 private:
     int m_id;
     int m_treasure;
-    Ship& m_ship;
+    Ship* m_ship;
 
 public:
-    Pirate(int id, int treasure, Ship& ship) : m_id(id), m_treasure(treasure), m_ship(ship){}
+    Pirate(int id, int treasure, Ship* ship) : m_id(id), m_treasure(treasure), m_ship(ship){}
 
     void updateTreasure(int change);
     int getId() const;
     int getTreasure() const;
-    const Ship& getShip() const;
-    void replaceSheep(const Ship& newShip) const;
+    Ship* getShip() const;
+    void replaceSheep(Ship* newShip);
 
     bool operator<(const Comparable& other) const override {
         return m_id < ((Pirate&) other).getId();

@@ -3,20 +3,28 @@
 
 #include "Pirate.h"
 #include "comparable.h"
+#include <avl_tree.h>
 
 class Ship : Comparable {
 public:
-    Ship(int shipId, int cannons) : m_id(shipId), m_cannons(cannons) {};
+    Ship(int shipId, int cannons) : m_id(shipId), m_cannons(cannons), m_coinOffset(0), m_richestPirate(nullptr) {};
+    // Ship(const Ship& other) {
+    //     m_cannons = other.m_cannons;
+    //     m_coinOffset = other.m_coinOffset;
+    // }
     ~Ship() = default;
 
-    void movePirateInto(const Pirate& pirate){
-        pirate.replaceSheep(*this);
-        insertPirate(pirate);
+    StatusType removePirate(int pirateId);
+
+    StatusType movePirateInto(Pirate& pirate){
+        pirate.replaceSheep(this);
+        return insertPirate(pirate);
     }
 
-    void createPirateIn(int pirateId, int pirateTreasure){
-        const Pirate& pirate = Pirate(pirateId, pirateTreasure, *this);
-        insertPirate(pirate);
+    StatusType createPirateIn(int pirateId, int pirateTreasure){
+        Pirate pirate = Pirate(pirateId, pirateTreasure, this);
+        pirate.updateTreasure(0 - m_coinOffset);
+        return insertPirate(pirate);
     }
 
     bool operator<(const Comparable& other) const override {
@@ -39,14 +47,38 @@ public:
         return m_cannons;
     }
 
+    int getPiratesOnShip() const {
+        return m_piratesOnShip.size();
+    }
+
+    output_t<int> getRichestPirateId() const {
+        if (getPiratesOnShip() == 0) {
+            return StatusType::FAILURE;
+        }
+        return (*m_richestPirate).getId();
+    }
+
+    int evaluate() const {
+        return std::min(m_cannons, getPiratesOnShip());
+    }
+
+    void shiftBalance(int change) {
+        m_coinOffset += change;
+    }
+
+    int getBalance() const {
+        return m_coinOffset;
+    }
+
 private:
     int m_id;
     int m_cannons;
-    // AVL<Pirate> m_piratesOnShip
-    // Pirate& m_veteranPirate
-    // int m_coinOffset
+    int m_coinOffset;
+    AVLTree<Pirate> m_piratesOnShip; // ordered by time on ship
+    AVLTree<Pirate> m_piratesOnShipOrderedByRichness;
+    Pirate* m_richestPirate;
 
-    void insertPirate(const Pirate& pirate); // TODO: insert pirate to avl-tree or trees
+    StatusType insertPirate(const Pirate& pirate); // TODO: insert pirate to avl-tree or trees
 };
 
 #endif // SHIP_H

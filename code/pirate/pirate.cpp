@@ -13,10 +13,10 @@ int Pirate::getTreasure() const {
     return m_treasure;
 }
 
-const Ship& Pirate::getShip() const {
+Ship* Pirate::getShip() const {
     return m_ship;
 }
 
-void Pirate::replaceSheep(const Ship& newShip) const {
+void Pirate::replaceSheep(Ship* newShip) {
     m_ship = newShip;
 }
