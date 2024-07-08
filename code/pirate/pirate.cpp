@@ -18,5 +18,6 @@ Ship* Pirate::getShip() const {
 }
 
 void Pirate::replaceShip(Ship* newShip) {
+    m_treasure += (*m_ship).getBalance();
     m_ship = newShip;
 }

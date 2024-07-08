@@ -18,6 +18,7 @@ public:
 
     StatusType movePirateIn(Pirate& pirate){
         pirate.replaceShip(this);
+        pirate.updateTreasure(0 - m_coinOffset);
         return insertPirate(pirate);
     }
 
