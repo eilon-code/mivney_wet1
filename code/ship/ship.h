@@ -80,13 +80,13 @@ private:
     int m_id;
     int m_cannons;
     int m_coinOffset;
-    AVLTree<Pirate> m_piratesOnShip; // ordered by time on ship
+    AVLTree<Pirate*> m_piratesOnShip; // ordered by time on ship
     AVLTree<PirateRank> m_piratesOnShipOrderedByRichness;
     Pirate* m_richestPirate;
 
     StatusType insertPirate(const Pirate& pirate); // TODO: insert pirate to avl-tree or trees
     StatusType updateRichestPirate();
-    output_t<Pirate&> findVeteranPirate() {
+    output_t<Pirate*&> findVeteranPirate() {
         return m_piratesOnShip.getMax();
     }
 };

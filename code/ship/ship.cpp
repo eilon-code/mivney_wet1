@@ -26,11 +26,11 @@ StatusType Ship::changePirateTreasure(int pirateId, int change)
 
 StatusType Ship::removeVeteranPirate()
 {
-    output_t<Pirate&> result = findVeteranPirate();
+    output_t<Pirate*&> result = findVeteranPirate();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    Pirate& veteranPirate = result.ans();
+    Pirate& veteranPirate = *result.ans();
     int veteranPirateId = veteranPirate.getId();
     return removePirate(veteranPirateId);
 }
