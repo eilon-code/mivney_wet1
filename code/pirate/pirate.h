@@ -16,7 +16,7 @@ public:
     int getId() const;
     int getTreasure() const;
     Ship* getShip() const;
-    void replaceSheep(Ship* newShip);
+    void replaceShip(Ship* newShip);
 
     bool operator<(const Comparable& other) const override {
         return m_id < ((Pirate&) other).getId();

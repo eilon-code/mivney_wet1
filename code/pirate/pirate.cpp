@@ -17,6 +17,6 @@ Ship* Pirate::getShip() const {
     return m_ship;
 }
 
-void Pirate::replaceSheep(Ship* newShip) {
+void Pirate::replaceShip(Ship* newShip) {
     m_ship = newShip;
 }

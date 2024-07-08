@@ -17,7 +17,7 @@ public:
     StatusType removePirate(int pirateId);
 
     StatusType movePirateInto(Pirate& pirate){
-        pirate.replaceSheep(this);
+        pirate.replaceShip(this);
         return insertPirate(pirate);
     }
 
