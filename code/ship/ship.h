@@ -4,6 +4,7 @@
 #include "Pirate.h"
 #include "comparable.h"
 #include <avl_tree.h>
+#include <pirate_rank.h>
 
 class Ship : Comparable {
 public:
@@ -80,7 +81,7 @@ private:
     int m_cannons;
     int m_coinOffset;
     AVLTree<Pirate> m_piratesOnShip; // ordered by time on ship
-    AVLTree<Pirate> m_piratesOnShipOrderedByRichness;
+    AVLTree<PirateRank> m_piratesOnShipOrderedByRichness;
     Pirate* m_richestPirate;
 
     StatusType insertPirate(const Pirate& pirate); // TODO: insert pirate to avl-tree or trees

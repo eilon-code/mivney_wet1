@@ -22,10 +22,10 @@ StatusType Ship::insertPirate(const Pirate &pirate)
 
 StatusType Ship::updateRichestPirate()
 {
-    output_t<Pirate&> result = m_piratesOnShipOrderedByRichness.getMax();
+    output_t<PirateRank&> result = m_piratesOnShipOrderedByRichness.getMax();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    Pirate& richestPirate = result.ans();
-    m_richestPirate = &richestPirate;
+    PirateRank& richestPirate = result.ans();
+    m_richestPirate = richestPirate.getPiratePointer();
 }
