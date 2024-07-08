@@ -17,7 +17,7 @@ public:
         // delete m_richestPirate;
     }
 
-    StatusType removePirate(Pirate pirate);
+    StatusType removePirate(Pirate& pirate);
 
     StatusType movePirateIn(Pirate& pirate){
         pirate.replaceShip(this);
@@ -26,7 +26,7 @@ public:
     }
 
     StatusType createPirateIn(int pirateId, int pirateTreasure){
-        Pirate pirate = Pirate(pirateId, pirateTreasure, this);
+        Pirate pirate(pirateId, pirateTreasure, this);
         pirate.updateTreasure(0 - m_coinOffset);
         return insertPirate(pirate);
     }
@@ -75,7 +75,7 @@ public:
     }
 
     StatusType changePirateTreasure(Pirate& pirate, int change);
-    output_t<Pirate&> removeVeteranPirate();
+    output_t<Pirate*> removeVeteranPirate();
 
 private:
     int m_id;
@@ -87,7 +87,7 @@ private:
 
     StatusType insertPirate(Pirate& pirate);
     StatusType updateRichestPirate();
-    output_t<Pirate*const&> findVeteranPirate() {
+    output_t<Pirate**> findVeteranPirate() {
         return m_piratesOnShip.getMax();
     }
 };

@@ -18,7 +18,7 @@ struct Node {
 
 template<typename T>
 class AVLTree {
-    static_assert(std::is_base_of<Comparable, T>::value, "T must inherit from Comparable");
+    // static_assert(std::is_base_of<Comparable, T>::value, "T must inherit from Comparable");
 
 public:
     AVLTree() : m_size(0), m_root(nullptr) {}
@@ -28,8 +28,8 @@ public:
         return m_size;
     }
 
-    output_t<T&> get(const T& key) const;
-    output_t<const T&> getMax() const;
+    output_t<T*> get(const T& key) const;
+    output_t<T*> getMax() const;
     StatusType insert(const T& key);
     StatusType remove(const T& key);
     StatusType search(const T& key) const;

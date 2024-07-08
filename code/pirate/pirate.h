@@ -14,6 +14,7 @@ public:
     Pirate() : m_id(-1), m_treasure(0), m_ship(nullptr) {}
     Pirate(int id, int treasure, Ship* ship) : m_id(id), m_treasure(treasure), m_ship(ship){}
     Pirate(int id) : m_id(id), m_treasure(0), m_ship(nullptr){} // dummi constructor
+    Pirate(const Pirate&) = delete;
 
     void updateTreasure(int change);
     int getId() const;
