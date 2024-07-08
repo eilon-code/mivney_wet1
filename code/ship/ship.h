@@ -75,7 +75,7 @@ public:
     }
 
     StatusType changePirateTreasure(Pirate& pirate, int change);
-    output_t<Pirate> removeVeteranPirate();
+    output_t<Pirate&> removeVeteranPirate();
 
 private:
     int m_id;

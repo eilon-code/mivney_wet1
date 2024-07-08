@@ -112,12 +112,12 @@ StatusType Ocean::treason(int sourceShipId, int destShipId)
 
     // TODO: add some checks for valid action
 
-    output_t<Pirate> deletedPirate = sourceShip.removeVeteranPirate();
+    output_t<Pirate&> deletedPirate = sourceShip.removeVeteranPirate();
     if (deletedPirate.status() != StatusType::SUCCESS) {
         return deletedPirate.status();
     }
     
-    Pirate pirate = deletedPirate.ans();
+    Pirate& pirate = deletedPirate.ans();
     return destShip.movePirateIn(pirate);
 }
 
