@@ -1,20 +1,21 @@
 #include "ship.h"
 
-StatusType Ship::removePirate(int pirateId)
+StatusType Ship::removePirate(Pirate pirate)
 {
     return StatusType();
 }
 
-StatusType Ship::changePirateTreasure(int pirateId, int change)
+StatusType Ship::changePirateTreasure(Pirate& pirate, int change)
  {
-    output_t<PirateRank&> searchResult = m_piratesOnShipOrderedByRichness.get(pirateId);
+    PirateRank rank = PirateRank(&pirate);
+    output_t<PirateRank&> searchResult = m_piratesOnShipOrderedByRichness.get(rank);
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status();
     }
     PirateRank pirateRank = searchResult.ans();
     Pirate* piratePointer = pirateRank.getPiratePointer();
 
-    StatusType result = m_piratesOnShipOrderedByRichness.remove(pirateId);
+    StatusType result = m_piratesOnShipOrderedByRichness.remove(pirateRank);
     if (result != StatusType::SUCCESS) {
         return result;
     }
@@ -26,13 +27,12 @@ StatusType Ship::changePirateTreasure(int pirateId, int change)
 
 StatusType Ship::removeVeteranPirate()
 {
-    output_t<Pirate*&> result = findVeteranPirate();
+    output_t<Pirate*const&> result = findVeteranPirate();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
     Pirate& veteranPirate = *result.ans();
-    int veteranPirateId = veteranPirate.getId();
-    return removePirate(veteranPirateId);
+    return removePirate(veteranPirate);
 }
 
 StatusType Ship::insertPirate(const Pirate &pirate)
@@ -41,10 +41,10 @@ StatusType Ship::insertPirate(const Pirate &pirate)
 
 StatusType Ship::updateRichestPirate()
 {
-    output_t<PirateRank&> result = m_piratesOnShipOrderedByRichness.getMax();
+    output_t<const PirateRank&> result = m_piratesOnShipOrderedByRichness.getMax();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    PirateRank& richestPirate = result.ans();
+    const PirateRank& richestPirate = result.ans();
     m_richestPirate = richestPirate.getPiratePointer();
 }

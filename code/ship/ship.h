@@ -9,6 +9,7 @@
 class Ship : Comparable {
 public:
     Ship(int shipId, int cannons) : m_id(shipId), m_cannons(cannons), m_coinOffset(0), m_richestPirate(nullptr) {};
+    Ship(int shipId) : m_id(shipId), m_cannons(-1), m_coinOffset(0), m_richestPirate(nullptr) {} // dumi ship
     Ship(const Ship&) = delete;
     ~Ship() {
         m_piratesOnShip.~AVLTree();
@@ -16,7 +17,7 @@ public:
         // delete m_richestPirate;
     }
 
-    StatusType removePirate(int pirateId);
+    StatusType removePirate(Pirate pirate);
 
     StatusType movePirateIn(Pirate& pirate){
         pirate.replaceShip(this);
@@ -73,7 +74,7 @@ public:
         return m_coinOffset;
     }
 
-    StatusType changePirateTreasure(int pirateId, int change);
+    StatusType changePirateTreasure(Pirate& pirate, int change);
     StatusType removeVeteranPirate();
 
 private:
@@ -86,7 +87,7 @@ private:
 
     StatusType insertPirate(const Pirate& pirate); // TODO: insert pirate to avl-tree or trees
     StatusType updateRichestPirate();
-    output_t<Pirate*&> findVeteranPirate() {
+    output_t<Pirate*const&> findVeteranPirate() {
         return m_piratesOnShip.getMax();
     }
 };
