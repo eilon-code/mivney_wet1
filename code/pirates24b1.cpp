@@ -125,7 +125,7 @@ StatusType Ocean::treason(int sourceShipId, int destShipId)
         return deletedPirate.status();
     }
     
-    return destShip.movePirateInto(deletedPirate.ans());
+    return destShip.movePirateIn(deletedPirate.ans());
 }
 
 StatusType Ocean::update_pirate_treasure(int pirateId, int change)
