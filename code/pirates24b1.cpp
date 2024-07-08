@@ -22,19 +22,11 @@ StatusType Ocean::add_ship(int shipId, int cannons)
         return result; // memory issue
     }
 
-    Ship* ship;
-    try
-    {
-        ship = new Ship(shipId, cannons);
-    }
-    catch(const std::exception& e)
-    {
-        return StatusType::ALLOCATION_ERROR;
-    }
-    result = m_shipTree.insert(*ship);
+    Ship ship(shipId, cannons);
+    result = m_shipTree.insert(ship);
 
     if (result != StatusType::SUCCESS) {
-        delete ship;
+        return result;
     }
     return StatusType::SUCCESS;
 }
