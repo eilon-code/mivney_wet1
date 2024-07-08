@@ -1,9 +1,9 @@
-#include "Pirate.h"
-#include "Ship.h"
+#include "pirate.h"
+#include "ship.h"
 
 void Pirate::updateTreasure(int change) {
     m_treasure += change;
-};
+}
 
 int Pirate::getId() const {
     return m_id;

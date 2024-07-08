@@ -15,8 +15,8 @@
 
 #include "wet1util.h"
 #include "avl_tree.h"
-#include "ship.h"
-#include "pirate.h"
+class Ship;
+class Pirate;
 
 class Ocean {
 private:

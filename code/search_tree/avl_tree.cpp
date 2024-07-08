@@ -2,16 +2,13 @@
 #include <algorithm>
 
 template<typename T>
-AVLTree<T>::AVLTree() : root(nullptr) {}
-
-template<typename T>
 AVLTree<T>::~AVLTree() {
-    deleteTree(root);
+    deleteTree(m_root);
 }
 
 template<typename T>
 output_t<T&> AVLTree<T>::get(const T& key) const {
-    Node<T>* current = root.get();
+    Node<T>* current = m_root.get();
     while (current != nullptr) {
         if (key < current->key) {
             current = current->left.get();
@@ -26,7 +23,7 @@ output_t<T&> AVLTree<T>::get(const T& key) const {
 
 template<typename T>
 output_t<const T&> AVLTree<T>::getMax() const {
-    Node<T>* current = root.get();
+    Node<T>* current = m_root.get();
     if (current == nullptr) return output_t<const T&>(StatusType::FAILURE);
 
     while (current->right != nullptr) {
@@ -38,7 +35,7 @@ output_t<const T&> AVLTree<T>::getMax() const {
 template<typename T>
 StatusType AVLTree<T>::insert(const T& key) {
     try {
-        root = insertNode(std::move(root), key);
+        m_root = insertNode(std::move(m_root), key);
         return StatusType::SUCCESS;
     } catch (...) {
         return StatusType::ALLOCATION_ERROR;
@@ -48,7 +45,7 @@ StatusType AVLTree<T>::insert(const T& key) {
 template<typename T>
 StatusType AVLTree<T>::remove(const T& key) {
     try {
-        root = removeNode(std::move(root), key);
+        m_root = removeNode(std::move(m_root), key);
         return StatusType::SUCCESS;
     } catch (...) {
         return StatusType::FAILURE;
@@ -62,7 +59,7 @@ StatusType AVLTree<T>::search(const T& key) const {
 
 template<typename T>
 void AVLTree<T>::printInorder() const {
-    printInorderRecursive(root);
+    printInorderRecursive(m_root);
     std::cout << std::endl;
 }
 

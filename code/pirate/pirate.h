@@ -1,7 +1,8 @@
 #ifndef PIRATE_H
 #define PIRATE_H
+#include "comparable.h"
 
-#include "Ship.h"
+class Ship;
 
 class Pirate : Comparable {
 private:
@@ -10,6 +11,7 @@ private:
     Ship* m_ship;
 
 public:
+    Pirate() : m_id(-1), m_treasure(0), m_ship(nullptr) {}
     Pirate(int id, int treasure, Ship* ship) : m_id(id), m_treasure(treasure), m_ship(ship){}
     Pirate(int id) : m_id(id), m_treasure(0), m_ship(nullptr){} // dummi constructor
 

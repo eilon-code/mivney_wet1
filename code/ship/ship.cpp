@@ -35,14 +35,18 @@ StatusType Ship::changePirateTreasure(Pirate& pirate, int change)
     return StatusType::SUCCESS;
 }
 
-StatusType Ship::removeVeteranPirate()
+output_t<Pirate> Ship::removeVeteranPirate()
 {
     output_t<Pirate*const&> result = findVeteranPirate();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    Pirate& veteranPirate = *result.ans();
-    return removePirate(veteranPirate);
+    Pirate veteranPirate = *result.ans();
+    StatusType output = removePirate(veteranPirate);
+    if (output != StatusType::SUCCESS) {
+        return output;
+    }
+    return veteranPirate;
 }
 
 StatusType Ship::insertPirate(Pirate &pirate)
@@ -67,4 +71,5 @@ StatusType Ship::updateRichestPirate()
     }
     const PirateRank& richestPirate = result.ans();
     m_richestPirate = richestPirate.getPiratePointer();
+    return StatusType::SUCCESS;
 }

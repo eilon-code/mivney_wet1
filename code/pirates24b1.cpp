@@ -1,6 +1,6 @@
 #include "pirates24b1.h"
-#include "wet1util.h"
-#include "avl_tree.h"
+#include "pirate.h"
+#include "ship.h"
 
 Ocean::Ocean(){}
 
@@ -112,12 +112,13 @@ StatusType Ocean::treason(int sourceShipId, int destShipId)
 
     // TODO: add some checks for valid action
 
-    output_t<Pirate&> deletedPirate = sourceShip.removeVeteranPirate();
+    output_t<Pirate> deletedPirate = sourceShip.removeVeteranPirate();
     if (deletedPirate.status() != StatusType::SUCCESS) {
         return deletedPirate.status();
     }
     
-    return destShip.movePirateIn(deletedPirate.ans());
+    Pirate pirate = deletedPirate.ans();
+    return destShip.movePirateIn(pirate);
 }
 
 StatusType Ocean::update_pirate_treasure(int pirateId, int change)

@@ -21,7 +21,7 @@ class AVLTree {
     static_assert(std::is_base_of<Comparable, T>::value, "T must inherit from Comparable");
 
 public:
-    AVLTree() : m_size(0);
+    AVLTree() : m_size(0), m_root(nullptr) {}
     ~AVLTree();
 
     int size() const {
@@ -37,7 +37,7 @@ public:
 
 private:
     int m_size;
-    std::unique_ptr<Node<T>> root;
+    std::unique_ptr<Node<T>> m_root;
 
     std::unique_ptr<Node<T>> insertNode(std::unique_ptr<Node<T>> node, const T& key);
     std::unique_ptr<Node<T>> removeNode(std::unique_ptr<Node<T>> node, const T& key);
