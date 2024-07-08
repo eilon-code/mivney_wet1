@@ -28,11 +28,11 @@ public:
         return m_size;
     }
 
-    output_t<T&> get(int key) const;
+    output_t<T&> get(const T& key) const;
     output_t<const T&> getMax() const;
     StatusType insert(const T& key);
-    StatusType remove(int key);
-    StatusType search(int key) const;
+    StatusType remove(const T& key);
+    StatusType search(const T& key) const;
     void printInorder() const;
 
 private:
@@ -40,7 +40,7 @@ private:
     std::unique_ptr<Node<T>> root;
 
     std::unique_ptr<Node<T>> insertNode(std::unique_ptr<Node<T>> node, const T& key);
-    std::unique_ptr<Node<T>> removeNode(std::unique_ptr<Node<T>> node, int key);
+    std::unique_ptr<Node<T>> removeNode(std::unique_ptr<Node<T>> node, const T& key);
     Node<T>* minValueNode(Node<T>* node) const;
     int getHeight(const std::unique_ptr<Node<T>>& node) const;
     int getBalance(const std::unique_ptr<Node<T>>& node) const;
