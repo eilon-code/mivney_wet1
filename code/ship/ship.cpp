@@ -5,6 +5,17 @@ StatusType Ship::removePirate(int pirateId)
     return StatusType();
 }
 
+StatusType Ship::removeVeteranPirate()
+{
+    output_t<Pirate&> result = findVeteranPirate();
+    if (result.status() != StatusType::SUCCESS) {
+        return result.status();
+    }
+    Pirate& veteranPirate = result.ans();
+    int veteranPirateId = veteranPirate.getId();
+    return removePirate(veteranPirateId);
+}
+
 StatusType Ship::insertPirate(const Pirate &pirate)
 {
 }
