@@ -45,8 +45,18 @@ StatusType Ship::removeVeteranPirate()
     return removePirate(veteranPirate);
 }
 
-StatusType Ship::insertPirate(const Pirate &pirate)
+StatusType Ship::insertPirate(Pirate &pirate)
 {
+    // assums the action is legal
+    StatusType output = m_piratesOnShip.insert(&pirate);
+    if (output != StatusType::SUCCESS) {
+        return output;
+    }
+    output = m_piratesOnShipOrderedByRichness.insert(&pirate);
+    if (output != StatusType::SUCCESS) {
+        return output;
+    }
+    return updateRichestPirate();
 }
 
 StatusType Ship::updateRichestPirate()
