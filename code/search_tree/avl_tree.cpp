@@ -7,7 +7,7 @@ AVLTree<T>::~AVLTree() {
 }
 
 template<typename T>
-output_t<T&> AVLTree<T>::get(const T& key) const {
+output_t<T*> AVLTree<T>::get(const T& key) const {
     Node<T>* current = m_root.get();
     while (current != nullptr) {
         if (key < current->key) {
@@ -15,21 +15,21 @@ output_t<T&> AVLTree<T>::get(const T& key) const {
         } else if (key > current->key) {
             current = current->right.get();
         } else {
-            return output_t<T&>(current->key);
+            return &(current->key);
         }
     }
-    return output_t<T&>(StatusType::FAILURE);
+    return StatusType::FAILURE;
 }
 
 template<typename T>
-output_t<const T&> AVLTree<T>::getMax() const {
+output_t<T*> AVLTree<T>::getMax() const {
     Node<T>* current = m_root.get();
-    if (current == nullptr) return output_t<const T&>(StatusType::FAILURE);
+    if (current == nullptr) return StatusType::FAILURE;
 
     while (current->right != nullptr) {
         current = current->right.get();
     }
-    return output_t<const T&>(current->key);
+    return &(current->key);
 }
 
 template<typename T>

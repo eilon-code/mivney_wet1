@@ -1,6 +1,6 @@
 #include "ship.h"
 
-StatusType Ship::removePirate(Pirate pirate)
+StatusType Ship::removePirate(Pirate& pirate)
 {
     // assums the pirate indeed is in the ship.
     StatusType output = m_piratesOnShip.remove(&pirate);
@@ -18,11 +18,11 @@ StatusType Ship::removePirate(Pirate pirate)
 StatusType Ship::changePirateTreasure(Pirate& pirate, int change)
  {
     PirateRank rank = PirateRank(&pirate);
-    output_t<PirateRank&> searchResult = m_piratesOnShipOrderedByRichness.get(rank);
+    output_t<PirateRank*> searchResult = m_piratesOnShipOrderedByRichness.get(rank);
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status();
     }
-    PirateRank pirateRank = searchResult.ans();
+    PirateRank pirateRank = *searchResult.ans();
     Pirate* piratePointer = pirateRank.getPiratePointer();
 
     StatusType result = m_piratesOnShipOrderedByRichness.remove(pirateRank);
@@ -35,14 +35,14 @@ StatusType Ship::changePirateTreasure(Pirate& pirate, int change)
     return StatusType::SUCCESS;
 }
 
-output_t<Pirate&> Ship::removeVeteranPirate()
+output_t<Pirate*> Ship::removeVeteranPirate()
 {
-    output_t<Pirate*const&> result = findVeteranPirate();
+    output_t<Pirate**> result = findVeteranPirate();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    Pirate veteranPirate = *result.ans();
-    StatusType output = removePirate(veteranPirate);
+    Pirate* veteranPirate = *result.ans();
+    StatusType output = removePirate(*veteranPirate);
     if (output != StatusType::SUCCESS) {
         return output;
     }
@@ -65,11 +65,11 @@ StatusType Ship::insertPirate(Pirate &pirate)
 
 StatusType Ship::updateRichestPirate()
 {
-    output_t<const PirateRank&> result = m_piratesOnShipOrderedByRichness.getMax();
+    output_t<PirateRank*> result = m_piratesOnShipOrderedByRichness.getMax();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    const PirateRank& richestPirate = result.ans();
+    const PirateRank& richestPirate = *result.ans();
     m_richestPirate = richestPirate.getPiratePointer();
     return StatusType::SUCCESS;
 }
