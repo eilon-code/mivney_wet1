@@ -2,7 +2,17 @@
 
 StatusType Ship::removePirate(Pirate pirate)
 {
-    return StatusType();
+    // assums the pirate indeed is in the ship.
+    StatusType output = m_piratesOnShip.remove(&pirate);
+    if (output != StatusType::SUCCESS) {
+        return output;
+    }
+    output = m_piratesOnShipOrderedByRichness.remove(&pirate);// PirateRank(&pirate)
+    if (output != StatusType::SUCCESS) {
+        return output;
+    }
+
+    return updateRichestPirate();
 }
 
 StatusType Ship::changePirateTreasure(Pirate& pirate, int change)
