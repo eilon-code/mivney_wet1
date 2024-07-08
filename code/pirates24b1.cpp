@@ -45,7 +45,7 @@ StatusType Ocean::remove_ship(int shipId)
         return StatusType::INVALID_INPUT;
     }
 
-    output_t<Ship&> searchResult = m_shipTree.get(shipId);
+    output_t<Ship&> searchResult = m_shipTree.get(shipId); // Ship(shipId) is being called
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status();
     }
@@ -53,7 +53,7 @@ StatusType Ocean::remove_ship(int shipId)
     if (ship.getPiratesOnShip() > 0) {
         return StatusType::FAILURE;
     }
-    return m_shipTree.remove(ship.getId());
+    return m_shipTree.remove(ship);
 }
 
 StatusType Ocean::add_pirate(int pirateId, int shipId, int treasure)
@@ -62,7 +62,7 @@ StatusType Ocean::add_pirate(int pirateId, int shipId, int treasure)
         return StatusType::INVALID_INPUT;
     }
 
-    StatusType pirateSearch = m_pirateTree.search(pirateId);
+    StatusType pirateSearch = m_pirateTree.search(pirateId); // dummi constructor is being called
     if (pirateSearch == StatusType::SUCCESS) {
         return StatusType::FAILURE; // already an existing pirate with the same id
     } else if (pirateSearch != StatusType::FAILURE) {
@@ -83,14 +83,14 @@ StatusType Ocean::remove_pirate(int pirateId)
         return StatusType::INVALID_INPUT;
     }
 
-    output_t<Pirate&> searchResult = m_pirateTree.get(pirateId);
+    output_t<Pirate&> searchResult = m_pirateTree.get(pirateId); // dummi constructor
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status();
     }
 
     const Pirate& pirate = searchResult.ans();
     Ship& ship = *pirate.getShip();
-    StatusType result = ship.removePirate(pirate.getId());
+    StatusType result = ship.removePirate(pirate);
     if (result != StatusType::SUCCESS) {
         return result;
     }
@@ -138,10 +138,10 @@ StatusType Ocean::update_pirate_treasure(int pirateId, int change)
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status();
     }
-    const Pirate& pirate = searchResult.ans();
+    Pirate& pirate = searchResult.ans();
     Ship& ship = *pirate.getShip();
     
-    return ship.changePirateTreasure(pirateId, change);
+    return ship.changePirateTreasure(pirate, change);
 }
 
 output_t<int> Ocean::get_treasure(int pirateId)
