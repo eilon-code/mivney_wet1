@@ -38,6 +38,7 @@ public:
     int size() const;
     output_t<T*> get(const T& key) const;
     output_t<T*> getMax() const;
+    output_t<T*> getMin() const;
     output_t<T*> insert(const T& key);
     StatusType remove(const T& key);
     void printInOrder() const;
@@ -269,6 +270,15 @@ output_t<T*> AVLTree<T>::getMax() const
         return StatusType::FAILURE;
     }
     return &(maxValueNode(m_root)->key);// this is a safe-operation
+}
+
+template <typename T>
+output_t<T *> AVLTree<T>::getMin() const
+{
+    if (m_root == nullptr) {
+        return StatusType::FAILURE;
+    }
+    return &(minValueNode(m_root)->key);// this is a safe-operation
 }
 
 template<typename T>
