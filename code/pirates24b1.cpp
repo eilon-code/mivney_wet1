@@ -26,7 +26,7 @@ StatusType Ocean::remove_ship(int shipId)
         return StatusType::INVALID_INPUT;
     }
 
-    return m_shipTree.remove(shipId);
+    return m_shipTree.remove(shipId); // dummi constructor
 }
 
 StatusType Ocean::add_pirate(int pirateId, int shipId, int treasure)
@@ -35,7 +35,7 @@ StatusType Ocean::add_pirate(int pirateId, int shipId, int treasure)
         return StatusType::INVALID_INPUT;
     }
 
-    output_t<Ship*> searchResult = m_shipTree.get(shipId);
+    output_t<Ship*> searchResult = m_shipTree.get(shipId); // dummi constructor
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status(); // such a ship do not exist or other issues
     }
@@ -67,7 +67,7 @@ StatusType Ocean::remove_pirate(int pirateId)
     if (result != StatusType::SUCCESS) {
         return result;
     }
-    return m_pirateTree.remove(pirateId);
+    return m_pirateTree.remove(pirateId); // dummi constructor
 }
 
 StatusType Ocean::treason(int sourceShipId, int destShipId)
@@ -76,7 +76,7 @@ StatusType Ocean::treason(int sourceShipId, int destShipId)
         return StatusType::INVALID_INPUT;
     }
 
-    output_t<Ship*> searchResult1 = m_shipTree.get(sourceShipId);
+    output_t<Ship*> searchResult1 = m_shipTree.get(sourceShipId); // dummi constructor
     if (searchResult1.status() != StatusType::SUCCESS) {
         return searchResult1.status();
     }
@@ -85,14 +85,12 @@ StatusType Ocean::treason(int sourceShipId, int destShipId)
         return StatusType::FAILURE;
     }
 
-    output_t<Ship*> searchResult2 = m_shipTree.get(destShipId);
+    output_t<Ship*> searchResult2 = m_shipTree.get(destShipId); // dummi constructor
     if (searchResult2.status() != StatusType::SUCCESS) {
         return searchResult2.status();
     }
     Ship* destShip = searchResult2.ans();
-
-    // TODO: add some checks for valid action
-
+    
     output_t<Pirate*> deletedPirate = sourceShip->removeVeteranPirate();
     if (deletedPirate.status() != StatusType::SUCCESS) {
         return deletedPirate.status();
@@ -124,7 +122,7 @@ output_t<int> Ocean::get_treasure(int pirateId)
         return StatusType::INVALID_INPUT;
     }
 
-    output_t<Pirate*> searchResult = m_pirateTree.get(pirateId);
+    output_t<Pirate*> searchResult = m_pirateTree.get(pirateId); // dummi constructor
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status();
     }
@@ -139,7 +137,7 @@ output_t<int> Ocean::get_cannons(int shipId)
         return StatusType::INVALID_INPUT;
     }
 
-    output_t<Ship*> searchResult = m_shipTree.get(shipId);
+    output_t<Ship*> searchResult = m_shipTree.get(shipId); // dummi constructor
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status();
     }
@@ -152,7 +150,7 @@ output_t<int> Ocean::get_richest_pirate(int shipId)
     if (shipId <= 0) {
         return StatusType::INVALID_INPUT;
     }
-    output_t<Ship*> searchResult = m_shipTree.get(shipId);
+    output_t<Ship*> searchResult = m_shipTree.get(shipId); // dummi constructor
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status();
     }
@@ -166,13 +164,13 @@ StatusType Ocean::ships_battle(int shipId1,int shipId2)
         return StatusType::INVALID_INPUT;
     }
     
-    output_t<Ship*> searchResult1 = m_shipTree.get(shipId1);
+    output_t<Ship*> searchResult1 = m_shipTree.get(shipId1); // dummi constructor
     if (searchResult1.status() != StatusType::SUCCESS) {
         return searchResult1.status();
     }
     Ship* ship1 = searchResult1.ans();
 
-    output_t<Ship*> searchResult2 = m_shipTree.get(shipId2);
+    output_t<Ship*> searchResult2 = m_shipTree.get(shipId2); // dummi constructor
     if (searchResult2.status() != StatusType::SUCCESS) {
         return searchResult2.status();
     }
