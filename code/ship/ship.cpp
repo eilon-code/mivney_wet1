@@ -1,22 +1,27 @@
 #include "ship.h"
 
-StatusType Ship::removePirate(Pirate& pirate)
+StatusType Ship::removePirate(Pirate* pirate)
 {
     // assums the pirate indeed is in the ship.
-    StatusType output = m_piratesOnShip.remove(&pirate);
+    StatusType output = m_piratesOnShip.remove(pirate);
     if (output != StatusType::SUCCESS) {
         return output;
     }
-    output = m_piratesOnShipOrderedByRichness.remove(&pirate);// PirateRank(&pirate)
+    output = m_piratesOnShipOrderedByRichness.remove(pirate);// PirateRank(&pirate)
     if (output != StatusType::SUCCESS) {
         return output;
+    }
+
+    long long int idOnShip = pirate->getIdOnShip();
+    if (idOnShip == m_pirates_count) {
+        m_pirates_count--;
     }
 
     return updateRichestPirate();
 }
 
 StatusType Ship::changePirateTreasure(Pirate& pirate, int change)
- {
+{
     PirateRank rank = PirateRank(&pirate);
     output_t<PirateRank*> searchResult = m_piratesOnShipOrderedByRichness.get(rank);
     if (searchResult.status() != StatusType::SUCCESS) {
@@ -37,26 +42,26 @@ StatusType Ship::changePirateTreasure(Pirate& pirate, int change)
 
 output_t<Pirate*> Ship::removeVeteranPirate()
 {
-    output_t<Pirate**> result = findVeteranPirate();
+    output_t<PirateShipRank*> result = findVeteranPirate();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    Pirate* veteranPirate = *result.ans();
-    StatusType output = removePirate(*veteranPirate);
+    Pirate* veteranPirate = result.ans()->getPiratePointer();
+    StatusType output = removePirate(veteranPirate);
     if (output != StatusType::SUCCESS) {
         return output;
     }
     return veteranPirate;
 }
 
-StatusType Ship::insertPirate(Pirate &pirate)
+StatusType Ship::insertPirate(Pirate *pirate)
 {
     // assums the action is legal
-    StatusType output = m_piratesOnShip.insert(&pirate);
+    StatusType output = m_piratesOnShip.insert(pirate).status();
     if (output != StatusType::SUCCESS) {
         return output;
     }
-    output = m_piratesOnShipOrderedByRichness.insert(&pirate);
+    output = m_piratesOnShipOrderedByRichness.insert(pirate).status();
     if (output != StatusType::SUCCESS) {
         return output;
     }
@@ -69,7 +74,7 @@ StatusType Ship::updateRichestPirate()
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    const PirateRank& richestPirate = *result.ans();
-    m_richestPirate = richestPirate.getPiratePointer();
+    PirateRank* richestPirate = result.ans();
+    m_richestPirate = richestPirate->getPiratePointer();
     return StatusType::SUCCESS;
 }

@@ -5,11 +5,12 @@
 #include "comparable.h"
 #include <avl_tree.h>
 #include <pirate_rank.h>
+#include <pirate_ship_rank.h>
 
 class Ship : public Comparable {
 public:
-    Ship(int shipId, int cannons) : m_id(shipId), m_cannons(cannons), m_coinOffset(0), m_richestPirate(nullptr) {};
-    Ship(int shipId) : m_id(shipId), m_cannons(-1), m_coinOffset(0), m_richestPirate(nullptr) {} // dumi ship
+    Ship(int shipId, int cannons) : m_id(shipId), m_cannons(cannons), m_coinOffset(0), m_pirates_count(0), m_richestPirate(nullptr) {};
+    Ship(int shipId) : m_id(shipId), m_cannons(-1), m_coinOffset(0), m_pirates_count(0), m_richestPirate(nullptr) {} // dumi ship
     // Ship(const Ship&) = delete;
     ~Ship() {
         m_piratesOnShip.~AVLTree();
@@ -17,17 +18,11 @@ public:
         // delete m_richestPirate;
     }
 
-    StatusType removePirate(Pirate& pirate);
+    StatusType removePirate(Pirate* pirate);
 
-    StatusType movePirateIn(Pirate& pirate){
-        pirate.replaceShip(this);
-        pirate.updateTreasure(0 - m_coinOffset);
-        return insertPirate(pirate);
-    }
-
-    StatusType createPirateIn(int pirateId, int pirateTreasure){
-        Pirate pirate(pirateId, pirateTreasure, this);
-        pirate.updateTreasure(0 - m_coinOffset);
+    StatusType movePirateIn(Pirate* pirate){
+        pirate->replaceShip(this);
+        pirate->updateTreasure(0 - m_coinOffset);
         return insertPirate(pirate);
     }
 
@@ -35,12 +30,12 @@ public:
         return m_id < ((Ship&) other).getId();
     }
 
-    bool operator>(const Comparable& other) const override {
-        return m_id > ((Ship&) other).getId();
-    }
-
     bool operator==(const Comparable& other) const override {
         return m_id == ((Ship&) other).getId();
+    }
+
+    bool isRemovable() const override {
+        return getPiratesOnShip() == 0;
     }
 
     int getId() const {
@@ -77,18 +72,23 @@ public:
     StatusType changePirateTreasure(Pirate& pirate, int change);
     output_t<Pirate*> removeVeteranPirate();
 
+    long long int getNewPireteId() {
+        return ++m_pirates_count;
+    }
+
 private:
     int m_id;
     int m_cannons;
     int m_coinOffset;
-    AVLTree<Pirate*> m_piratesOnShip; // ordered by time on ship
+    long long int m_pirates_count;
+    AVLTree<PirateShipRank> m_piratesOnShip; // ordered by time on ship
     AVLTree<PirateRank> m_piratesOnShipOrderedByRichness;
     Pirate* m_richestPirate;
 
-    StatusType insertPirate(Pirate& pirate);
+    StatusType insertPirate(Pirate* pirate);
     StatusType updateRichestPirate();
-    output_t<Pirate**> findVeteranPirate() {
-        return m_piratesOnShip.getMax();
+    output_t<PirateShipRank*> findVeteranPirate() {
+        return m_piratesOnShip.getMin();
     }
 };
 
