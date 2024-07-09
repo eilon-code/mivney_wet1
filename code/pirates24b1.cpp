@@ -15,7 +15,7 @@ StatusType Ocean::add_ship(int shipId, int cannons)
     if (shipId <= 0 || cannons < 0) {
         return StatusType::INVALID_INPUT;
     }
-    StatusType result = m_shipTree.search(shipId);
+    StatusType result = m_shipTree.get(shipId).status();
     if (result == StatusType::SUCCESS) {
         return StatusType::FAILURE; // found existing ship with the same id
     } else if (result != StatusType::FAILURE) {
@@ -54,7 +54,7 @@ StatusType Ocean::add_pirate(int pirateId, int shipId, int treasure)
         return StatusType::INVALID_INPUT;
     }
 
-    StatusType pirateSearch = m_pirateTree.search(pirateId); // dummi constructor is being called
+    StatusType pirateSearch = m_pirateTree.get(pirateId).status(); // dummi constructor is being called
     if (pirateSearch == StatusType::SUCCESS) {
         return StatusType::FAILURE; // already an existing pirate with the same id
     } else if (pirateSearch != StatusType::FAILURE) {
