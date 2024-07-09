@@ -38,7 +38,7 @@ public:
     int size() const;
     output_t<T*> get(const T& key) const;
     output_t<T*> getMax() const;
-    StatusType insert(const T& key);
+    output_t<T*> insert(const T& key);
     StatusType remove(const T& key);
     void printInOrder() const;
 
@@ -87,10 +87,12 @@ void AVLTree<T>::deleteTree(Node<T> *node){
 }
 
 template<typename T>
-StatusType AVLTree<T>::insert(const T& key){
+output_t<T*> AVLTree<T>::insert(const T& key){
     try{
         Node<T>* newNode = new Node<T>(key);
         m_root=insertNode(m_root,newNode);
+        m_size += 1;
+        return &(newNode->key);
     } catch (const AVLTreeException& e){
         return StatusType::FAILURE;
     } catch (...) {
@@ -101,10 +103,7 @@ StatusType AVLTree<T>::insert(const T& key){
 
 template<typename T>
 Node<T>* AVLTree<T>::insertNode(Node<T> *root, Node<T> *node){
-    if(!root){
-        m_size+=1;
-        return node;
-    }
+    if(!root) return node;
     if (node->key == root->key) {
         throw AVLTreeException("Node key matches root key");
     }
@@ -132,6 +131,7 @@ template<typename T>
 StatusType AVLTree<T>::remove(const T& key){
     try{
         m_root=removeNode(m_root,key);
+        m_size -= 1;
     } catch(const AVLTreeException& e) {
         return StatusType::FAILURE;
     } catch(...) {
@@ -144,6 +144,7 @@ template<typename T>
 Node<T>* AVLTree<T>::removeNode(Node<T> *root,const T& key){
     if(!root) throw AVLTreeException("Error: key is not in any node of the tree.");
     if(root->key == key){
+        if (!(root->key.isRemovable())) throw AVLTreeException("Cannot remove");
         if(root->left==nullptr && root->right==nullptr){
             delete(root);
             return nullptr;
