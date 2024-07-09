@@ -12,7 +12,7 @@ BUILD_DIR = build/
 # Source files
 MAIN_SRC = $(DIR)main24b1.cpp
 OCEAN_SRC = $(DIR)pirates24b1.cpp
-TREE_SRC = $(TREE_DIR)avl_tree.cpp
+TREE_SRC = $(TREE_DIR)avl_tree.h
 PIRATE_SRC = $(PIRATE_DIR)pirate.cpp
 SHIP_SRC = $(SHIP_DIR)ship.cpp
 
@@ -24,7 +24,7 @@ PIRATE_OBJ = $(BUILD_DIR)pirate.o
 SHIP_OBJ = $(BUILD_DIR)ship.o
 
 # All object files
-OBJS = $(MAIN_OBJ) $(OCEAN_OBJ) $(PIRATE_OBJ) $(SHIP_OBJ) $(TREE_OBJ)
+OBJS = $(MAIN_OBJ) $(OCEAN_OBJ) $(PIRATE_OBJ) $(SHIP_OBJ)
 
 # Executable name
 EXEC = prog
@@ -43,7 +43,7 @@ $(MAIN_OBJ): $(MAIN_SRC) $(DIR)wet1util.h | $(BUILD_DIR)
 	$(CXX) -c $(DEBUG_FLAG) $(COMP_FLAG) $(INCLUDE_FLAGS) $< -o $@
 
 # Ocean object file
-$(OCEAN_OBJ): $(OCEAN_SRC) $(DIR)pirates24b1.h $(DIR)wet1util.h $(TREE_DIR)avl_tree.h | $(BUILD_DIR)
+$(OCEAN_OBJ): $(OCEAN_SRC) $(DIR)pirates24b1.h $(DIR)wet1util.h $(TREE_SRC) | $(BUILD_DIR)
 	$(CXX) -c $(DEBUG_FLAG) $(COMP_FLAG) $(INCLUDE_FLAGS) $< -o $@
 
 # Pirate object file
@@ -51,11 +51,7 @@ $(PIRATE_OBJ): $(PIRATE_SRC) $(PIRATE_DIR)pirate.h $(PIRATE_DIR)pirate_rank.h $(
 	$(CXX) -c $(DEBUG_FLAG) $(COMP_FLAG) $(INCLUDE_FLAGS) $< -o $@
 
 # Ship object file
-$(SHIP_OBJ): $(SHIP_SRC) $(SHIP_DIR)ship.h $(TREE_DIR)avl_tree.h $(PIRATE_DIR)pirate.h | $(BUILD_DIR)
-	$(CXX) -c $(DEBUG_FLAG) $(COMP_FLAG) $(INCLUDE_FLAGS) $< -o $@
-
-# Tree object file
-$(TREE_OBJ): $(TREE_SRC) $(TREE_DIR)avl_tree.h $(TREE_DIR)comparable.h | $(BUILD_DIR)
+$(SHIP_OBJ): $(SHIP_SRC) $(SHIP_DIR)ship.h $(TREE_SRC) $(PIRATE_DIR)pirate.h | $(BUILD_DIR)
 	$(CXX) -c $(DEBUG_FLAG) $(COMP_FLAG) $(INCLUDE_FLAGS) $< -o $@
 
 # Create build directory if it doesn't exist
