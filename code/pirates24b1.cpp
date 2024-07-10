@@ -113,7 +113,7 @@ StatusType Ocean::update_pirate_treasure(int pirateId, int change)
     Pirate* pirate = searchResult.ans();
     Ship* ship = pirate->getShip();
     
-    return ship->changePirateTreasure(*pirate, change);
+    return ship->changePirateTreasure(pirate, change);
 }
 
 output_t<int> Ocean::get_treasure(int pirateId)

@@ -15,9 +15,9 @@ StatusType Ship::removePirate(Pirate* pirate)
     return updateRichestPirate();
 }
 
-StatusType Ship::changePirateTreasure(Pirate& pirate, int change)
+StatusType Ship::changePirateTreasure(Pirate* pirate, int change)
 {
-    PirateRank rank = PirateRank(&pirate);
+    PirateRank rank = PirateRank(pirate);
     output_t<PirateRank*> searchResult = m_piratesOnShipOrderedByRichness.get(rank);
     if (searchResult.status() != StatusType::SUCCESS) {
         return searchResult.status();

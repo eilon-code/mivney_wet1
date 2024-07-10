@@ -69,7 +69,7 @@ public:
         return m_coinOffset;
     }
 
-    StatusType changePirateTreasure(Pirate& pirate, int change);
+    StatusType changePirateTreasure(Pirate* pirate, int change);
     output_t<Pirate*> removeVeteranPirate();
 
 private:
