@@ -3,18 +3,13 @@
 StatusType Ship::removePirate(Pirate* pirate)
 {
     // assums the pirate indeed is in the ship.
-    StatusType output = m_piratesOnShip.remove(pirate);
+    StatusType output = m_piratesOnShip.remove(pirate->getShipNode());
     if (output != StatusType::SUCCESS) {
         return output;
     }
     output = m_piratesOnShipOrderedByRichness.remove(pirate);// PirateRank(&pirate)
     if (output != StatusType::SUCCESS) {
         return output;
-    }
-
-    long long int idOnShip = pirate->getIdOnShip();
-    if (idOnShip == m_pirates_count) {
-        m_pirates_count--;
     }
 
     return updateRichestPirate();
@@ -35,18 +30,18 @@ StatusType Ship::changePirateTreasure(Pirate& pirate, int change)
         return result;
     }
     piratePointer->updateTreasure(change);
-    PirateRank pirateRankNew = PirateRank(piratePointer);
+    PirateRank pirateRankNew(piratePointer);
     m_piratesOnShipOrderedByRichness.insert(pirateRankNew); // should work, because deletion of the same object worked
     return StatusType::SUCCESS;
 }
 
 output_t<Pirate*> Ship::removeVeteranPirate()
 {
-    output_t<PirateShipRank*> result = findVeteranPirate();
+    output_t<Pirate*> result = findVeteranPirate();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    Pirate* veteranPirate = result.ans()->getPiratePointer();
+    Pirate* veteranPirate = result.ans();
     StatusType output = removePirate(veteranPirate);
     if (output != StatusType::SUCCESS) {
         return output;
@@ -57,11 +52,12 @@ output_t<Pirate*> Ship::removeVeteranPirate()
 StatusType Ship::insertPirate(Pirate *pirate)
 {
     // assums the action is legal
-    StatusType output = m_piratesOnShip.insert(pirate).status();
-    if (output != StatusType::SUCCESS) {
-        return output;
+    output_t<List<Pirate*>::Node*> insertionResult = m_piratesOnShip.insert(pirate);
+    if (insertionResult.status() != StatusType::SUCCESS) {
+        return insertionResult.status();
     }
-    output = m_piratesOnShipOrderedByRichness.insert(pirate).status();
+    pirate->setShipNode(insertionResult.ans());
+    StatusType output = m_piratesOnShipOrderedByRichness.insert(pirate).status();
     if (output != StatusType::SUCCESS) {
         return output;
     }
