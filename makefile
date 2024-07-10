@@ -6,12 +6,14 @@ CXX = g++
 DIR = code/
 PIRATE_DIR = $(DIR)pirate/
 SHIP_DIR = $(DIR)ship/
+LIST_DIR = $(DIR)linked_list/
 TREE_DIR = $(DIR)search_tree/
 BUILD_DIR = build/
 
 # Source files
 MAIN_SRC = $(DIR)main24b1.cpp
 OCEAN_SRC = $(DIR)pirates24b1.cpp
+LIST_SRC = $(LIST_DIR)linked_list.h
 TREE_SRC = $(TREE_DIR)avl_tree.h
 PIRATE_SRC = $(PIRATE_DIR)pirate.cpp
 SHIP_SRC = $(SHIP_DIR)ship.cpp
@@ -32,7 +34,7 @@ EXEC = prog
 # Flags
 DEBUG_FLAG = # Leave empty, assign -g for debug
 COMP_FLAG = -std=c++11 -Wall -Werror
-INCLUDE_FLAGS = -I$(DIR) -I$(PIRATE_DIR) -I$(SHIP_DIR) -I$(TREE_DIR)
+INCLUDE_FLAGS = -I$(DIR) -I$(PIRATE_DIR) -I$(SHIP_DIR) -I$(TREE_DIR) -I$(LIST_DIR)
 
 # Default target
 $(EXEC): $(OBJS)
@@ -47,11 +49,11 @@ $(OCEAN_OBJ): $(OCEAN_SRC) $(DIR)pirates24b1.h $(DIR)wet1util.h $(TREE_SRC) | $(
 	$(CXX) -c $(DEBUG_FLAG) $(COMP_FLAG) $(INCLUDE_FLAGS) $< -o $@
 
 # Pirate object file
-$(PIRATE_OBJ): $(PIRATE_SRC) $(PIRATE_DIR)pirate.h $(PIRATE_DIR)pirate_rank.h $(SHIP_DIR)ship.h | $(BUILD_DIR)
+$(PIRATE_OBJ): $(PIRATE_SRC) $(PIRATE_DIR)pirate.h $(PIRATE_DIR)pirate_rank.h $(SHIP_DIR)ship.h $(LIST_SRC) | $(BUILD_DIR)
 	$(CXX) -c $(DEBUG_FLAG) $(COMP_FLAG) $(INCLUDE_FLAGS) $< -o $@
 
 # Ship object file
-$(SHIP_OBJ): $(SHIP_SRC) $(SHIP_DIR)ship.h $(TREE_SRC) $(PIRATE_DIR)pirate.h | $(BUILD_DIR)
+$(SHIP_OBJ): $(SHIP_SRC) $(SHIP_DIR)ship.h $(TREE_SRC) $(LIST_SRC) $(PIRATE_DIR)pirate.h | $(BUILD_DIR)
 	$(CXX) -c $(DEBUG_FLAG) $(COMP_FLAG) $(INCLUDE_FLAGS) $< -o $@
 
 # Create build directory if it doesn't exist

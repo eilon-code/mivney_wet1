@@ -1,6 +1,7 @@
 #ifndef PIRATE_H
 #define PIRATE_H
 #include "comparable.h"
+#include <linked_list.h>
 
 class Ship;
 
@@ -9,11 +10,11 @@ private:
     int m_id;
     int m_treasure;
     Ship* m_ship;
+    List<Pirate*>::Node* m_pointerInShipList;
 
 public:
-    Pirate() : m_id(-1), m_treasure(0), m_ship(nullptr) {}
-    Pirate(int id, int treasure, Ship* ship) : m_id(id), m_treasure(treasure), m_ship(ship){}
-    Pirate(int id) : m_id(id), m_treasure(0), m_ship(nullptr){} // dummi constructor
+    Pirate(int id, int treasure) : m_id(id), m_treasure(treasure), m_ship(nullptr), m_pointerInShipList(nullptr) {}
+    Pirate(int id) : m_id(id), m_treasure(0), m_ship(nullptr) {} // dummi constructor
     // Pirate(const Pirate&) = delete;
 
     void updateTreasure(int change);
@@ -26,12 +27,16 @@ public:
         return m_id < ((Pirate&) other).getId();
     }
 
-    bool operator>(const Comparable& other) const override {
-        return m_id > ((Pirate&) other).getId();
-    }
-
     bool operator==(const Comparable& other) const override {
         return m_id == ((Pirate&) other).getId();
+    }
+
+    List<Pirate*>::Node* getShipNode() const {
+        return m_pointerInShipList;
+    }
+
+    void setShipNode(List<Pirate*>::Node* node) {
+        m_pointerInShipList = node;
     }
 };
 

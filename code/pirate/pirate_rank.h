@@ -34,10 +34,6 @@ public:
         return getId() < o.getId();
     }
 
-    bool operator>(const Comparable& other) const override {
-        return ((!(*this == other)) && (!(*this < other)));
-    }
-
     bool operator==(const Comparable& o) const override {
         PirateRank other = (PirateRank&) o;
         return getTreasure() == other.getTreasure() && getId() == other.getId();
