@@ -1,0 +1,128 @@
+<mxfile host="app.diagrams.net" modified="2024-07-11T19:39:00.378Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="KwE8lkX33eXz1EE4RD3G" version="24.6.5" type="device">
+  <diagram name="Page-1" id="CjQCZDu5Ls5BjcAdCtPy">
+    <mxGraphModel dx="794" dy="1623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-1" value="Ocean" style="swimlane;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;sortEdges=1;resizable=0;containerType=tree;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="17" y="-520" width="613" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-2" value="m_shipTree" style="swimlane;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;sortEdges=1;resizable=0;containerType=tree;fontSize=12;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-1">
+          <mxGeometry x="20" y="40" width="280" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-3" value="Ship" style="whiteSpace=wrap;html=1;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-2">
+          <mxGeometry x="90" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-4" value="Ship" style="whiteSpace=wrap;html=1;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-2">
+          <mxGeometry x="20" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-5" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=1;curved=0;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startSize=6;endSize=6;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-2" source="GDTxn_QOBoNvV6_boD6U-3" target="GDTxn_QOBoNvV6_boD6U-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-6" value="Ship" style="whiteSpace=wrap;html=1;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-2">
+          <mxGeometry x="160" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-7" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=1;curved=0;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startSize=6;endSize=6;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-2" source="GDTxn_QOBoNvV6_boD6U-3" target="GDTxn_QOBoNvV6_boD6U-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-8" value="m_pirateTree" style="swimlane;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;sortEdges=1;resizable=0;containerType=tree;fontSize=12;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-1">
+          <mxGeometry x="315" y="40" width="280" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-9" value="Pirate" style="whiteSpace=wrap;html=1;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-8">
+          <mxGeometry x="90" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-10" value="Pirate" style="whiteSpace=wrap;html=1;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-8">
+          <mxGeometry x="20" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-11" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=1;curved=0;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startSize=6;endSize=6;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-8" source="GDTxn_QOBoNvV6_boD6U-9" target="GDTxn_QOBoNvV6_boD6U-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-12" value="Pirate" style="whiteSpace=wrap;html=1;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-8">
+          <mxGeometry x="160" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-13" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=1;curved=0;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startSize=6;endSize=6;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-8" source="GDTxn_QOBoNvV6_boD6U-9" target="GDTxn_QOBoNvV6_boD6U-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-14" value="Ship" style="swimlane;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;sortEdges=1;resizable=0;containerType=tree;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="163" y="-200" width="321" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-15" value="m_piratesOnShipOrderedByRichness" style="swimlane;startSize=20;horizontal=1;childLayout=treeLayout;horizontalTree=0;sortEdges=1;resizable=0;containerType=tree;fontSize=12;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-14">
+          <mxGeometry x="20.5" y="30" width="280" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-16" value="Pirate" style="whiteSpace=wrap;html=1;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-15">
+          <mxGeometry x="90" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-17" value="Pirate" style="whiteSpace=wrap;html=1;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-15">
+          <mxGeometry x="20" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-18" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=1;curved=0;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startSize=6;endSize=6;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-15" source="GDTxn_QOBoNvV6_boD6U-16" target="GDTxn_QOBoNvV6_boD6U-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-19" value="Pirate" style="whiteSpace=wrap;html=1;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-15">
+          <mxGeometry x="160" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-20" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;html=1;rounded=1;curved=0;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startSize=6;endSize=6;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-15" source="GDTxn_QOBoNvV6_boD6U-16" target="GDTxn_QOBoNvV6_boD6U-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-21" value="m_piratesOnShip" style="swimlane;startSize=20;horizontal=1;containerType=tree;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-14">
+          <mxGeometry x="20.5" y="230" width="280" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-22" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=classic;endArrow=none;rounded=0;curved=0;endFill=0;startFill=1;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-21" source="GDTxn_QOBoNvV6_boD6U-23" target="GDTxn_QOBoNvV6_boD6U-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="95" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-23" value="Pirate" style="whiteSpace=wrap;html=1;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-21">
+          <mxGeometry x="110" y="35" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-24" value="Pirate" style="whiteSpace=wrap;html=1;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-21">
+          <mxGeometry x="110" y="115" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-25" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=classic;rounded=0;curved=0;endFill=1;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-21" source="GDTxn_QOBoNvV6_boD6U-23" target="GDTxn_QOBoNvV6_boD6U-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-60" y="-185" as="sourcePoint" />
+            <mxPoint x="-60" y="-145" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="160" y="95" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-26" value="Pirate" style="whiteSpace=wrap;html=1;treeFolding=1;treeMoving=1;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;startArrow&quot;:&quot;none&quot;,&quot;endArrow&quot;:&quot;none&quot;};" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-21">
+          <mxGeometry x="110" y="195" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-27" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=classic;endArrow=none;rounded=0;curved=0;endFill=0;startFill=1;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-21" target="GDTxn_QOBoNvV6_boD6U-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="155" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="180" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-28" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;sourcePerimeterSpacing=0;targetPerimeterSpacing=0;startArrow=none;endArrow=classic;rounded=0;curved=0;endFill=1;" edge="1" parent="GDTxn_QOBoNvV6_boD6U-21" target="GDTxn_QOBoNvV6_boD6U-26">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="155" as="sourcePoint" />
+            <mxPoint x="-60" y="-65" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="160" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-29" value="*Ordered by time on ship" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="GDTxn_QOBoNvV6_boD6U-21">
+          <mxGeometry x="16.5" y="35" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GDTxn_QOBoNvV6_boD6U-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.489;entryY=0;entryDx=0;entryDy=0;fillColor=default;dashed=1;dashPattern=8 8;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="GDTxn_QOBoNvV6_boD6U-4" target="GDTxn_QOBoNvV6_boD6U-14">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110.00010101010098" y="-320" as="sourcePoint" />
+            <mxPoint x="346.49000000000007" y="-200" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="107" y="-250" />
+              <mxPoint x="320" y="-250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
