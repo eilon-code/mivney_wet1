@@ -8,10 +8,6 @@ class PirateRank : public Comparable {
 private:
     Pirate* m_pirate;
 
-    Pirate& getPirate() const {
-        return *getPiratePointer();
-    }
-
 public:
     PirateRank(Pirate* pirate) : m_pirate(pirate) {}
 
@@ -40,11 +36,11 @@ public:
     }
 
     int getId() const {
-        return getPirate().getId();
+        return m_pirate->getId();
     }
 
     int getTreasure() const {
-        return getPirate().getTreasure();
+        return m_pirate->getTreasure();
     }
 };
 

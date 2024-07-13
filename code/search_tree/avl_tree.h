@@ -8,28 +8,6 @@
 
 using namespace std;
 
-class AVLTreeException : public std::exception {
-private:
-    std::string message;
-public:
-    // Constructor
-    explicit AVLTreeException(const std::string& msg) : message(msg) {}
-
-    // Override the what() method
-    virtual const char* what() const noexcept override {
-        return message.c_str();
-    }
-};
-
-template<typename T>
-struct Node {
-    T key;
-    Node *left;
-    Node *right;
-    int height;
-    Node(const T& key) : key(key), left(nullptr), right(nullptr), height(1) {}
-};
-
 template<typename T>
 class AVLTree {
 public:
@@ -44,20 +22,39 @@ public:
     void printInOrder() const;
 
 private:
+    class AVLTreeException : std::exception {
+    private:
+        std::string n_message;
+    public:
+        // Constructor
+        explicit AVLTreeException(const std::string& msg) : n_message(msg) {}
+
+        // Override the what() method
+        virtual const char* what() const noexcept override {
+            return n_message.c_str();
+        }
+    };
+    struct Node {
+        T key;
+        Node *left;
+        Node *right;
+        int height;
+        Node(const T& key) : key(key), left(nullptr), right(nullptr), height(1) {}
+    };
     int m_size;
-    Node<T> *m_root;
-    Node<T>* insertNode(Node<T> *root, Node<T> *node);
-    Node<T>* removeNode(Node<T> *root,const T& key);
-    Node<T>* minValueNode(Node<T>* node) const;
-    Node<T>* maxValueNode(Node<T>* node) const;
-    int getHeight(const Node<T> *node) const;
-    int getBalance(const Node<T> *node) const;
-    Node<T>* rotateRight(Node<T> *node);
-    Node<T>* rotateLeft(Node<T> *node);
-    void deleteTree(Node<T> *node);
-    void updateHeight(Node<T>* node);
-    void printInOrderRecursive(const Node<T> *node) const;
-    Node<T>* search(Node<T>* node, const T& key) const;
+    Node *m_root;
+    Node* insertNode(Node *root, Node *node);
+    Node* removeNode(Node *root,const T& key);
+    Node* minValueNode(Node* node) const;
+    Node* maxValueNode(Node* node) const;
+    int getHeight(const Node *node) const;
+    int getBalance(const Node *node) const;
+    Node* rotateRight(Node *node);
+    Node* rotateLeft(Node *node);
+    void deleteTree(Node *node);
+    void updateHeight(Node* node);
+    void printInOrderRecursive(const Node *node) const;
+    Node* search(Node* node, const T& key) const;
 };
 
 template<typename T>
@@ -80,7 +77,7 @@ void AVLTree<T>::printInOrder()const{
 }
 
 template<typename T>
-void AVLTree<T>::deleteTree(Node<T> *node){
+void AVLTree<T>::deleteTree(Node *node){
     if(!node)return;
     deleteTree(node->left);
     deleteTree(node->right);
@@ -90,7 +87,7 @@ void AVLTree<T>::deleteTree(Node<T> *node){
 template<typename T>
 output_t<T*> AVLTree<T>::insert(const T& key){
     try{
-        Node<T>* newNode = new Node<T>(key);
+        Node* newNode = new Node(key);
         m_root=insertNode(m_root,newNode);
         m_size += 1;
         return &(newNode->key);
@@ -103,7 +100,7 @@ output_t<T*> AVLTree<T>::insert(const T& key){
 }
 
 template<typename T>
-Node<T>* AVLTree<T>::insertNode(Node<T> *root, Node<T> *node){
+typename AVLTree<T>::Node* AVLTree<T>::insertNode(Node *root, Node *node){
     if(!root) return node;
     if (node->key == root->key) {
         throw AVLTreeException("Node key matches root key");
@@ -142,7 +139,7 @@ StatusType AVLTree<T>::remove(const T& key){
 }
 
 template<typename T>
-Node<T>* AVLTree<T>::removeNode(Node<T> *root,const T& key){
+typename AVLTree<T>::Node* AVLTree<T>::removeNode(Node *root,const T& key){
     if(!root) throw AVLTreeException("Error: key is not in any node of the tree.");
     if(root->key == key){
         if (!(root->key.isRemovable())) throw AVLTreeException("Cannot remove");
@@ -150,17 +147,17 @@ Node<T>* AVLTree<T>::removeNode(Node<T> *root,const T& key){
             delete(root);
             return nullptr;
         }else if(root->left==nullptr){
-            Node<T> *temp = root->right;
+            Node *temp = root->right;
             delete(root);
             root=temp;
         }else if(root->right==nullptr){
-            Node<T> *temp = root->left;
+            Node *temp = root->left;
             delete(root);
             root=temp;
         }else{
             //changing value of the root to the value of min node in the right tree
             //then removing the duplicate
-            Node<T>* newRoot = minValueNode(root->right);
+            Node* newRoot = minValueNode(root->right);
             root->key=newRoot->key;
             root->right=removeNode(root->right,root->key);
         }
@@ -188,24 +185,24 @@ Node<T>* AVLTree<T>::removeNode(Node<T> *root,const T& key){
 }
 
 template <typename T>
-Node<T>* AVLTree<T>::minValueNode(Node<T> *node) const
+typename AVLTree<T>::Node* AVLTree<T>::minValueNode(Node *node) const
 {
-    Node<T>* result = node;
+    Node* result = node;
     while(result->left != nullptr)result=result->left;
     return result;
 }
 
 template <typename T>
-Node<T>* AVLTree<T>::maxValueNode(Node<T> *node) const
+typename AVLTree<T>::Node* AVLTree<T>::maxValueNode(Node *node) const
 {
-    Node<T>* result = node;
+    Node* result = node;
     while(result->right != nullptr)result=result->right;
     return result;
 }
 
 template<typename T>
-Node<T>* AVLTree<T>::rotateRight(Node<T>* node){
-    Node<T> *newNode = node->left;
+typename AVLTree<T>::Node* AVLTree<T>::rotateRight(Node* node){
+    Node *newNode = node->left;
     node->left=newNode->right;
     newNode->right=node;
     updateHeight(node);
@@ -214,8 +211,8 @@ Node<T>* AVLTree<T>::rotateRight(Node<T>* node){
 }
 
 template<typename T>
-Node<T>* AVLTree<T>::rotateLeft(Node<T>* node){
-    Node<T> *newNode = node->right;
+typename AVLTree<T>::Node* AVLTree<T>::rotateLeft(Node* node){
+    Node *newNode = node->right;
     node->right=newNode->left;
     newNode->left=node;
     updateHeight(node);
@@ -224,13 +221,13 @@ Node<T>* AVLTree<T>::rotateLeft(Node<T>* node){
 }
 
 template<typename T>
-void AVLTree<T>::updateHeight(Node<T>* node){
+void AVLTree<T>::updateHeight(Node* node){
     node->height=(getHeight(node->left)>getHeight(node->right))?getHeight(node->left):getHeight(node->right);
     node->height+=1;
 }
 
 template<typename T>
-int AVLTree<T>::getHeight(const Node<T>* node)const{
+int AVLTree<T>::getHeight(const Node* node)const{
     if(!node){
         return 0;
     }
@@ -238,12 +235,12 @@ int AVLTree<T>::getHeight(const Node<T>* node)const{
 }
 
 template<typename T>
-int AVLTree<T>::getBalance(const Node<T> *node)const{
+int AVLTree<T>::getBalance(const Node *node)const{
     return getHeight(node->left)-getHeight(node->right);
 }
 
 template<typename T>
-void AVLTree<T>::printInOrderRecursive(const Node<T> *node)const{
+void AVLTree<T>::printInOrderRecursive(const Node *node)const{
     if(node==nullptr){
         return;
     }
@@ -282,7 +279,7 @@ output_t<T *> AVLTree<T>::getMin() const
 }
 
 template<typename T>
-Node<T>* AVLTree<T>::search(Node<T> *node, const T& key) const {
+typename AVLTree<T>::Node* AVLTree<T>::search(Node *node, const T& key) const {
     if(!node) throw AVLTreeException("Error: key was not found in the tree.");
     if(node->key==key){
         return node;
