@@ -2,7 +2,6 @@
 #define LIST_H
 
 #include "../wet1util.h"
-#include <memory>
 #include <iostream>
 
 template<typename T>
@@ -18,6 +17,9 @@ public:
     ~List();
     int size() const;
     output_t<T> getLast() const;
+    Node* getFirstNode() const{
+        return m_start;
+    }
     output_t<Node*> insert(const T& key);
     StatusType remove(Node* node);
 
@@ -38,8 +40,7 @@ List<T>::~List() {
     while (m_size > 0) {
         remove(m_start->right);
     }
-    delete m_start;
-    delete m_end;
+    
 }
 
 template<typename T>

@@ -4,11 +4,7 @@
 
 Ocean::Ocean(){}
 
-Ocean::~Ocean()
-{
-    m_shipTree.~AVLTree();
-    m_pirateTree.~AVLTree();
-}
+Ocean::~Ocean()=default;
 
 StatusType Ocean::add_ship(int shipId, int cannons)
 {
