@@ -1,22 +1,17 @@
 #ifndef SHIP_H
 #define SHIP_H
 
-#include "Pirate.h"
+#include "pirate.h"
 #include "comparable.h"
-#include <avl_tree.h>
-#include <pirate_rank.h>
-#include <linked_list.h>
+#include "avl_tree.h"
+#include "pirate_rank.h"
+#include "linked_list.h"
 
 class Ship : public Comparable {
 public:
-    Ship(int shipId, int cannons) : m_id(shipId), m_cannons(cannons), m_coinOffset(0), m_richestPirate(nullptr) {};
+    Ship(int shipId, int cannons) : m_id(shipId), m_cannons(cannons), m_coinOffset(0), m_richestPirate(nullptr) {}
     Ship(int shipId) : m_id(shipId), m_cannons(-1), m_coinOffset(0), m_richestPirate(nullptr) {} // dumi ship
-    // Ship(const Ship&) = delete;
-    ~Ship() {
-        m_piratesOnShip.~List();
-        m_piratesOnShipOrderedByRichness.~AVLTree();
-        // delete m_richestPirate;
-    }
+    ~Ship()=default;
 
     StatusType removePirate(Pirate* pirate);
 
