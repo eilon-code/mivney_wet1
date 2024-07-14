@@ -19,6 +19,7 @@ public:
     output_t<T*> insert(const T& key);
     StatusType remove(const T& key);
     void printInOrder() const;
+    void print() const;
 
 private:
     class AVLTreeException : std::exception {
@@ -53,6 +54,7 @@ private:
     void deleteTree(Node *node);
     void updateHeight(Node* node);
     void printInOrderRecursive(const Node *node) const;
+    void printTree(Node *node, int space) const;
     Node* search(Node* node, const T& key) const;
 };
 
@@ -246,6 +248,37 @@ void AVLTree<T>::printInOrderRecursive(const Node *node)const{
     printInOrderRecursive(node->left);
     std::cout << node->key << " ";
     printInOrderRecursive(node->right);
+}
+
+template <typename T>
+inline void AVLTree<T>::print() const
+{
+    if (!m_root)
+    {
+        std::cout << "Tree is empty.\n";
+        return;
+    }
+    printTree(m_root, 0);
+}
+
+template <typename T>
+void AVLTree<T>::printTree(Node *node, int space) const
+{
+    if (!node) return;
+
+    const int COUNT = 5;
+    space += COUNT;
+
+    printTree(node->right, space);
+
+    std::cout << std::endl;
+    for (int i = COUNT; i < space; ++i)
+    {
+        std::cout << " ";
+    }
+    std::cout << (node->key).getId() << "\n";
+
+    printTree(node->left, space);
 }
 
 template<typename T>

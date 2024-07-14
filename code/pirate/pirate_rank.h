@@ -1,7 +1,6 @@
 #ifndef PIRATE_RANK_H
 #define PIRATE_RANK_H
 
-#include "comparable.h"
 #include "pirate.h"
 
 class PirateRank : public Comparable {

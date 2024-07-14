@@ -1,6 +1,4 @@
 #include "pirates24b1.h"
-#include "pirate.h"
-#include "ship.h"
 
 Ocean::Ocean(){}
 

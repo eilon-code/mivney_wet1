@@ -1,11 +1,11 @@
 #ifndef SHIP_H
 #define SHIP_H
 
-#include "pirate.h"
-#include "comparable.h"
-#include "avl_tree.h"
-#include "pirate_rank.h"
-#include "linked_list.h"
+#include "../pirate/pirate.h"
+#include "../pirate/pirate_rank.h"
+#include "../search_tree/comparable.h"
+#include "../search_tree/avl_tree.h"
+#include "../linked_list/linked_list.h"
 
 class Ship : public Comparable {
 public:

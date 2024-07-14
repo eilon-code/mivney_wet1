@@ -1,7 +1,7 @@
 #ifndef PIRATE_H
 #define PIRATE_H
-#include "comparable.h"
-#include "linked_list.h"
+#include "../search_tree/comparable.h"
+#include "../linked_list/linked_list.h"
 
 class Ship;
 
