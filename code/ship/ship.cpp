@@ -66,6 +66,10 @@ StatusType Ship::insertPirate(Pirate *pirate)
 
 StatusType Ship::updateRichestPirate()
 {
+    if (isRemovable()) {
+        m_richestPirate = nullptr;
+        return StatusType::SUCCESS;
+    }
     output_t<PirateRank*> result = m_piratesOnShipOrderedByRichness.getMax();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
