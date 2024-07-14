@@ -11,6 +11,7 @@ public:
         public:
             PiratePointer() : m_pointer(nullptr) {}
             PiratePointer(Pirate* pointer) : m_pointer(pointer) {}
+            PiratePointer(const PiratePointer& pointer) = default;
 
             Pirate& operator->() const {
                 return *m_pointer;
