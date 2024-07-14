@@ -3,7 +3,6 @@
 
 #include "../wet1util.h"
 #include "comparable.h"
-#include <memory>
 #include <iostream>
 
 using namespace std;

@@ -1,17 +1,11 @@
 #ifndef PIRATE_H
 #define PIRATE_H
 #include "comparable.h"
-#include <linked_list.h>
+#include "linked_list.h"
 
 class Ship;
 
 class Pirate : public Comparable {
-private:
-    int m_id;
-    int m_treasure;
-    Ship* m_ship;
-    List<Pirate*>::Node* m_pointerInShipList;
-
 public:
     Pirate(int id, int treasure) : m_id(id), m_treasure(treasure), m_ship(nullptr), m_pointerInShipList(nullptr) {}
     Pirate(int id) : m_id(id), m_treasure(0), m_ship(nullptr) {} // dummi constructor
@@ -38,6 +32,11 @@ public:
     void setShipNode(List<Pirate*>::Node* node) {
         m_pointerInShipList = node;
     }
+private:
+    int m_id;
+    int m_treasure;
+    Ship* m_ship;
+    List<Pirate*>::Node* m_pointerInShipList;
 };
 
 #endif // PIRATE_H
