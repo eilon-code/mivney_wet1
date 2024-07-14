@@ -37,11 +37,11 @@ StatusType Ship::changePirateTreasure(Pirate* pirate, int change)
 
 output_t<Pirate*> Ship::removeVeteranPirate()
 {
-    output_t<Pirate**> result = findVeteranPirate();
+    output_t<Pirate*> result = findVeteranPirate();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    Pirate* veteranPirate = *result.ans();
+    Pirate* veteranPirate = result.ans();
     StatusType output = removePirate(veteranPirate);
     if (output != StatusType::SUCCESS) {
         return output;

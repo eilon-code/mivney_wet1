@@ -77,7 +77,7 @@ private:
 
     StatusType insertPirate(Pirate* pirate);
     StatusType updateRichestPirate();
-    output_t<Pirate**> findVeteranPirate() {
+    output_t<Pirate*> findVeteranPirate() {
         return m_piratesOnShip.first();
     }
 };

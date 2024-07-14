@@ -16,8 +16,8 @@ public:
     List() : m_head(nullptr), m_tail(nullptr), m_size(0) {}
     ~List();
 
-    Node* add(const T& value);
-    output_t<T*> first() const;
+    output_t<Node*> add(const T& value);
+    output_t<T> first() const;
     StatusType remove(Node* node);
     void printList() const;
     int size() const {
@@ -40,23 +40,27 @@ List<T>::~List() {
 }
 
 template <typename T>
-typename List<T>::Node* List<T>::add(const T& value) {
-    Node* newNode = new Node(value);
-    if (m_head == nullptr) {
-        m_head = m_tail = newNode;
-    } else {
-        m_tail->next = newNode;
-        newNode->prev = m_tail;
-        m_tail = newNode;
+output_t<typename List<T>::Node*> List<T>::add(const T& value) {
+    try {
+        Node* newNode = new Node(value);
+        if (m_head == nullptr) {
+            m_head = m_tail = newNode;
+        } else {
+            m_tail->next = newNode;
+            newNode->prev = m_tail;
+            m_tail = newNode;
+        }
+        ++m_size;
+        return newNode;
+    } catch(const std::exception& e) {
+        return StatusType::ALLOCATION_ERROR;
     }
-    ++m_size;
-    return newNode;
 }
 
 template <typename T>
-output_t<T*> List<T>::first() const {
+output_t<T> List<T>::first() const {
     if (m_head == nullptr) return StatusType::FAILURE;
-    return &(m_head->data);
+    return m_head->data;
 }
 
 template <typename T>
