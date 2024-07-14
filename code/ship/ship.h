@@ -71,13 +71,13 @@ private:
     int m_id;
     int m_cannons;
     int m_coinOffset;
-    List<Pirate::PiratePointer> m_piratesOnShip; // ordered by time on ship
+    List<Pirate*> m_piratesOnShip; // ordered by time on ship
     AVLTree<PirateRank> m_piratesOnShipOrderedByRichness;
     Pirate* m_richestPirate;
 
     StatusType insertPirate(Pirate* pirate);
     StatusType updateRichestPirate();
-    output_t<Pirate::PiratePointer*> findVeteranPirate() {
+    output_t<Pirate**> findVeteranPirate() {
         return m_piratesOnShip.first();
     }
 };

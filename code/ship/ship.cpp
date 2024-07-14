@@ -37,11 +37,11 @@ StatusType Ship::changePirateTreasure(Pirate* pirate, int change)
 
 output_t<Pirate*> Ship::removeVeteranPirate()
 {
-    output_t<Pirate::PiratePointer*> result = findVeteranPirate();
+    output_t<Pirate**> result = findVeteranPirate();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();
     }
-    Pirate* veteranPirate = (*result.ans()).get();
+    Pirate* veteranPirate = *result.ans();
     StatusType output = removePirate(veteranPirate);
     if (output != StatusType::SUCCESS) {
         return output;
@@ -52,7 +52,7 @@ output_t<Pirate*> Ship::removeVeteranPirate()
 StatusType Ship::insertPirate(Pirate *pirate)
 {
     // assums the action is legal
-    output_t<List<Pirate::PiratePointer>::Node*> insertionResult = m_piratesOnShip.add(pirate);
+    output_t<List<Pirate*>::Node*> insertionResult = m_piratesOnShip.add(pirate);
     if (insertionResult.status() != StatusType::SUCCESS) {
         return insertionResult.status();
     }
