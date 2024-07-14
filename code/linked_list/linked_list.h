@@ -66,8 +66,7 @@ output_t<T> List<T>::first() const {
 template <typename T>
 StatusType List<T>::remove(Node* node) {
     if (node == nullptr) return StatusType::FAILURE;
-    try
-    {
+    try {
         if (node->prev != nullptr) {
             node->prev->next = node->next;
         } else {
@@ -82,9 +81,7 @@ StatusType List<T>::remove(Node* node) {
 
         delete node;
         --m_size;
-        }
-    catch(...)
-    {
+    } catch(...) {
         return StatusType::ALLOCATION_ERROR;
     }
     return StatusType::SUCCESS;
