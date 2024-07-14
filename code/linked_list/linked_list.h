@@ -52,7 +52,7 @@ output_t<typename List<T>::Node*> List<T>::add(const T& value) {
         }
         ++m_size;
         return newNode;
-    } catch(const std::exception& e) {
+    } catch(...) {
         return StatusType::ALLOCATION_ERROR;
     }
 }
