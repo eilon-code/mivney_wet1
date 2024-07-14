@@ -17,7 +17,7 @@ make -f makefile
 # Check if the executable was created
 if [ -f ./build/prog ]; then
     echo "Executable found, running the program..."
-    valgrind --leak-check=full ./build/prog < ./tests/input/test1.in > test.out
+    valgrind -s --leak-check=full ./build/prog < ./tests/input/test1.in > test.out
 else
     echo "Executable not found. Compilation might have failed."
 fi

@@ -3,7 +3,7 @@ echo Cleaning previous builds...
 mingw32-make -f makefile clean
 
 @REM Compile the program
-echo Compiling the program...
+@echo Compiling the program...
 mingw32-make -f makefile
 
 @REM rem Check if the input file exists
@@ -22,10 +22,10 @@ mingw32-make -f makefile
 
 @REM Check if the executable was created
 if exist ./build/prog.exe (
-    echo Executable found, running the program...
+    @echo Executable found, running the program...
     .\build\prog.exe < ./tests/input/test1.in > test.out
 ) else (
-    echo Executable not found. Compilation might have failed.
+    @echo Executable not found. Compilation might have failed.
 )
 
 @REM Pause to see the output in the command prompt
