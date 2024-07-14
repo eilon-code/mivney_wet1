@@ -41,6 +41,8 @@ List<T>::~List() {
         remove(m_start->right);
     }
     
+    delete m_start;
+    delete m_end;
 }
 
 template<typename T>
