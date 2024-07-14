@@ -18,6 +18,6 @@ Ship* Pirate::getShip() const {
 }
 
 void Pirate::replaceShip(Ship* newShip) {
-    m_treasure += (m_ship != nullptr ? (*m_ship).getBalance() : 0);
+    m_treasure += (m_ship != nullptr ? m_ship->getBalance() : 0);
     m_ship = newShip;
 }

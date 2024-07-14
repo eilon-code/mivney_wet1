@@ -7,7 +7,7 @@ StatusType Ship::removePirate(Pirate* pirate)
     if (output != StatusType::SUCCESS) {
         return output;
     }
-    output = m_piratesOnShipOrderedByRichness.remove(pirate);// PirateRank(&pirate)
+    output = m_piratesOnShipOrderedByRichness.remove(pirate);// PirateRank(pirate)
     if (output != StatusType::SUCCESS) {
         return output;
     }
