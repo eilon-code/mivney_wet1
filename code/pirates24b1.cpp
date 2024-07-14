@@ -4,11 +4,7 @@
 
 Ocean::Ocean(){}
 
-Ocean::~Ocean()
-{
-    m_shipTree.~AVLTree();
-    m_pirateTree.~AVLTree();
-}
+Ocean::~Ocean()=default;
 
 StatusType Ocean::add_ship(int shipId, int cannons)
 {
@@ -40,8 +36,8 @@ StatusType Ocean::add_pirate(int pirateId, int shipId, int treasure)
         return searchResult.status(); // such a ship do not exist or other issues
     }
 
-    Pirate mewPirate(pirateId, treasure);
-    output_t<Pirate*> pirateSearch = m_pirateTree.insert(mewPirate);
+    Pirate newPirate(pirateId, treasure);
+    output_t<Pirate*> pirateSearch = m_pirateTree.insert(newPirate);
     if (pirateSearch.status() != StatusType::SUCCESS) {
         return pirateSearch.status();
     }

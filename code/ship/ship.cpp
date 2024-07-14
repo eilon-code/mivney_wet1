@@ -7,7 +7,7 @@ StatusType Ship::removePirate(Pirate* pirate)
     if (output != StatusType::SUCCESS) {
         return output;
     }
-    output = m_piratesOnShipOrderedByRichness.remove(pirate);// PirateRank(&pirate)
+    output = m_piratesOnShipOrderedByRichness.remove(pirate);// PirateRank(pirate)
     if (output != StatusType::SUCCESS) {
         return output;
     }
@@ -52,7 +52,7 @@ output_t<Pirate*> Ship::removeVeteranPirate()
 StatusType Ship::insertPirate(Pirate *pirate)
 {
     // assums the action is legal
-    output_t<List<Pirate*>::Node*> insertionResult = m_piratesOnShip.insert(pirate);
+    output_t<List<Pirate*>::Node*> insertionResult = m_piratesOnShip.add(pirate);
     if (insertionResult.status() != StatusType::SUCCESS) {
         return insertionResult.status();
     }
@@ -66,6 +66,10 @@ StatusType Ship::insertPirate(Pirate *pirate)
 
 StatusType Ship::updateRichestPirate()
 {
+    if (isRemovable()) {
+        m_richestPirate = nullptr;
+        return StatusType::SUCCESS;
+    }
     output_t<PirateRank*> result = m_piratesOnShipOrderedByRichness.getMax();
     if (result.status() != StatusType::SUCCESS) {
         return result.status();

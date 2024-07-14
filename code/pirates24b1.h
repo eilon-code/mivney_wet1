@@ -20,8 +20,9 @@ class Pirate;
 
 class Ocean {
 private:
-    AVLTree<Ship> m_shipTree;
     AVLTree<Pirate> m_pirateTree;
+    AVLTree<Ship> m_shipTree;
+    
     //
     // Here you may add anything you want
     //
