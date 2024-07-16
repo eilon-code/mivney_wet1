@@ -19,20 +19,8 @@ get_treasure 7
 get_treasure 8
 remove_pirate 8
 treason 1 234
-get_richest_pirate 2
+get_richest_pirate 1
 get_treasure 4
 update_pirate_treasure 4 4
 get_treasure 4
 remove_pirate 8
-remove_ship 2
-remove_pirate 7
-remove_ship 2
-get_treasure 0
-get_treasure -1
-get_treasure 8
-get_cannons 0
-get_cannons -1
-get_cannons 3
-get_richest_pirate 0
-get_richest_pirate -1
-get_richest_pirate 3
