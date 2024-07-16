@@ -1,0 +1,1627 @@
+[0;35m
+ _____    ______  _______  ______     ______  _______  ______   _    _   ______ _______  _    _   ______   ______  ______    1
+| | \ \  | |  | |   | |   | |  | |   / |        | |   | |  | \ | |  | | | |       | |   | |  | | | |  | \ | |     / |
+| |  | | | |__| |   | |   | |__| |   '------.   | |   | |__| | | |  | | | |       | |   | |  | | | |__| | | |---- '------.
+|_|_/_/  |_|  |_|   |_|   |_|  |_|    ____|_/   |_|   |_|  \_\ \_|__|_| |_|____   |_|   \_|__|_| |_|  \_\ |_|____  ____|_/
+
+ _   _   _   ______ _______   1   ______   ______   ______  _____  ______   ______    2024
+| | | | | | | |       | |        / |      | |  | \ | |  | \  | |  | |  \ \ | | ____
+| | | | | | | |----   | |        '------. | |__|_/ | |__| |  | |  | |  | | | |  | |
+|_|_|_|_|_/ |_|____   |_|         ____|_/ |_|      |_|  \_\ _|_|_ |_|  |_| |_|__|_
+
+[0m
+[0;34mRunning test 0 >>>[0m
+Test 0 execution time: 15ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 1 >>>[0m
+Test 1 execution time: 15ms
+Test Simulation: [0;31mfail[0m
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;31mfail[0m
+
+==14457== Memcheck, a memory error detector
+==14457== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14457== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==14457== Command: ./FileTester
+==14457== Parent PID: 14431
+==14457== 
+==14457== Invalid read of size 8
+==14457==    at 0x10C4AE: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Address 0x4dd5840 is 16 bytes inside a block of size 40 free'd
+==14457==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10C4F0: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C643: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Block was alloc'd at
+==14457==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10EA95: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10E50B: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457== 
+==14457== Invalid read of size 8
+==14457==    at 0x10C4C5: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Address 0x4dd5848 is 24 bytes inside a block of size 40 free'd
+==14457==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10C4F0: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C643: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Block was alloc'd at
+==14457==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10EA95: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10E50B: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457== 
+==14457== Invalid write of size 8
+==14457==    at 0x10DFF9: PirateRank::~PirateRank() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C489: AVLTree<PirateRank>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C4E8: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Address 0x4dd5830 is 0 bytes inside a block of size 40 free'd
+==14457==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10C4F0: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C643: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Block was alloc'd at
+==14457==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10EA95: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10E50B: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457== 
+==14457== Invalid write of size 8
+==14457==    at 0x10B5B3: Comparable::~Comparable() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10E007: PirateRank::~PirateRank() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C489: AVLTree<PirateRank>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C4E8: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Address 0x4dd5830 is 0 bytes inside a block of size 40 free'd
+==14457==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10C4F0: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C643: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Block was alloc'd at
+==14457==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10EA95: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10E50B: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457== 
+==14457== Invalid free() / delete / delete[] / realloc()
+==14457==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10C4F0: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Address 0x4dd5830 is 0 bytes inside a block of size 40 free'd
+==14457==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10C4F0: AVLTree<PirateRank>::deleteTree(AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BD98: AVLTree<PirateRank>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DF93: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C643: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Block was alloc'd at
+==14457==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10EA95: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10E50B: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457== 
+==14457== Invalid read of size 8
+==14457==    at 0x10BD1F: List<Pirate*>::~List() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DFA3: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Address 0x4dd57e0 is 16 bytes inside a block of size 24 free'd
+==14457==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10BD37: List<Pirate*>::~List() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DFA3: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C643: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Block was alloc'd at
+==14457==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10EBBF: List<Pirate*>::add(Pirate* const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10E494: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457== 
+==14457== Invalid free() / delete / delete[] / realloc()
+==14457==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10BD37: List<Pirate*>::~List() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DFA3: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Address 0x4dd57d0 is 0 bytes inside a block of size 24 free'd
+==14457==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10BD37: List<Pirate*>::~List() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10DFA3: Ship::~Ship() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C5F5: AVLTree<Ship>::Node::~Node() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C654: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10C643: AVLTree<Ship>::deleteTree(AVLTree<Ship>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BECA: AVLTree<Ship>::~AVLTree() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A65F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10A68F: Ocean::~Ocean() (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x110818: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==  Block was alloc'd at
+==14457==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14457==    by 0x10EBBF: List<Pirate*>::add(Pirate* const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10E494: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14457== 
+==14457== 
+==14457== HEAP SUMMARY:
+==14457==     in use at exit: 0 bytes in 0 blocks
+==14457==   total heap usage: 49 allocs, 51 frees, 83,586 bytes allocated
+==14457== 
+==14457== All heap blocks were freed -- no leaks are possible
+==14457== 
+==14457== For lists of detected and suppressed errors, rerun with: -s
+==14457== ERROR SUMMARY: 7 errors from 7 contexts (suppressed: 0 from 0)
+[0;34mRunning test 2 >>>[0m
+Test 2 execution time: 18ms
+Test Simulation: [0;31mfail[0m
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;31mfail[0m
+
+==14489== Memcheck, a memory error detector
+==14489== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14489== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==14489== Command: ./FileTester
+==14489== Parent PID: 14431
+==14489== 
+==14489== 
+==14489== HEAP SUMMARY:
+==14489==     in use at exit: 152 bytes in 2 blocks
+==14489==   total heap usage: 77 allocs, 75 frees, 85,479 bytes allocated
+==14489== 
+==14489== 56 bytes in 1 blocks are definitely lost in loss record 1 of 2
+==14489==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14489==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14489==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14489==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14489== 
+==14489== 96 bytes in 1 blocks are definitely lost in loss record 2 of 2
+==14489==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14489==    by 0x10BEFF: AVLTree<Ship>::insert(Ship const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14489==    by 0x10A71C: Ocean::add_ship(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14489==    by 0x10FAD2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14489== 
+==14489== LEAK SUMMARY:
+==14489==    definitely lost: 152 bytes in 2 blocks
+==14489==    indirectly lost: 0 bytes in 0 blocks
+==14489==      possibly lost: 0 bytes in 0 blocks
+==14489==    still reachable: 0 bytes in 0 blocks
+==14489==         suppressed: 0 bytes in 0 blocks
+==14489== 
+==14489== For lists of detected and suppressed errors, rerun with: -s
+==14489== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+[0;34mRunning test 3 >>>[0m
+Test 3 execution time: 12ms
+Test Simulation: [0;31mfail[0m
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;31mfail[0m
+
+==14510== Memcheck, a memory error detector
+==14510== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14510== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==14510== Command: ./FileTester
+==14510== Parent PID: 14431
+==14510== 
+==14510== Invalid read of size 4
+==14510==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10B8C8: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10EEDB: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10E8ED: AVLTree<PirateRank>::remove(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10E14C: Ship::removePirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10AAC2: Ocean::remove_pirate(int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10FC6C: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==  Address 0x4dd51dc is 12 bytes inside a block of size 56 free'd
+==14510==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14510==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10C411: AVLTree<Pirate>::remove(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10AAF8: Ocean::remove_pirate(int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10FC6C: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==  Block was alloc'd at
+==14510==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14510==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510== 
+==14510== Invalid read of size 4
+==14510==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10B8E6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10EEDB: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10E8ED: AVLTree<PirateRank>::remove(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10E14C: Ship::removePirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10AAC2: Ocean::remove_pirate(int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10FC6C: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==  Address 0x4dd51d8 is 8 bytes inside a block of size 56 free'd
+==14510==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14510==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10C411: AVLTree<Pirate>::remove(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10AAF8: Ocean::remove_pirate(int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10FC6C: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==  Block was alloc'd at
+==14510==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14510==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14510== 
+==14510== 
+==14510== HEAP SUMMARY:
+==14510==     in use at exit: 0 bytes in 0 blocks
+==14510==   total heap usage: 23 allocs, 23 frees, 81,638 bytes allocated
+==14510== 
+==14510== All heap blocks were freed -- no leaks are possible
+==14510== 
+==14510== For lists of detected and suppressed errors, rerun with: -s
+==14510== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+[0;34mRunning test 4 >>>[0m
+Test 4 execution time: 12ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 5 >>>[0m
+Test 5 execution time: 41ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 6 >>>[0m
+Test 6 execution time: 229ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 7 >>>[0m
+Test 7 execution time: 2081ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 8 >>>[0m
+Test 8 execution time: 12ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 9 >>>[0m
+Test 9 execution time: 10ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 10 >>>[0m
+Test 10 execution time: 12ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 11 >>>[0m
+Test 11 execution time: 10ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 12 >>>[0m
+Test 12 execution time: 9ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 13 >>>[0m
+Test 13 execution time: 13ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 14 >>>[0m
+Test 14 execution time: 17ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 15 >>>[0m
+Test 15 execution time: 13ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 16 >>>[0m
+Test 16 execution time: 15ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 17 >>>[0m
+Test 17 execution time: 12ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 18 >>>[0m
+Test 18 execution time: 10ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 19 >>>[0m
+Test 19 execution time: 19ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 20 >>>[0m
+Test 20 execution time: 12ms
+Test Simulation: [0;31mfail[0m
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;31mfail[0m
+
+==14871== Memcheck, a memory error detector
+==14871== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==14871== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==14871== Command: ./FileTester
+==14871== Parent PID: 14431
+==14871== 
+==14871== Invalid read of size 4
+==14871==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10B8D6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10F4AA: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10EAC6: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10E50B: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==  Address 0x4dd527c is 12 bytes inside a block of size 56 free'd
+==14871==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14871==    by 0x10D7E3: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10C411: AVLTree<Pirate>::remove(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10AAF8: Ocean::remove_pirate(int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FC6C: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==  Block was alloc'd at
+==14871==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14871==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871== 
+==14871== Invalid read of size 4
+==14871==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10B8D6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10B7A9: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10EAC6: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10E50B: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==  Address 0x4dd527c is 12 bytes inside a block of size 56 free'd
+==14871==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14871==    by 0x10D7E3: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10C411: AVLTree<Pirate>::remove(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10AAF8: Ocean::remove_pirate(int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FC6C: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==  Block was alloc'd at
+==14871==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14871==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871== 
+==14871== Invalid read of size 4
+==14871==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10B7E4: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10EAC6: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10E50B: Ship::insertPirate(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10BADE: Ship::movePirateIn(Pirate*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10AD3F: Ocean::treason(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FCFB: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==  Address 0x4dd527c is 12 bytes inside a block of size 56 free'd
+==14871==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14871==    by 0x10D7E3: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10C411: AVLTree<Pirate>::remove(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10AAF8: Ocean::remove_pirate(int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FC6C: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==  Block was alloc'd at
+==14871==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14871==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871== 
+==14871== 
+==14871== HEAP SUMMARY:
+==14871==     in use at exit: 56 bytes in 1 blocks
+==14871==   total heap usage: 37 allocs, 36 frees, 82,296 bytes allocated
+==14871== 
+==14871== 56 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==14871==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==14871==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==14871== 
+==14871== LEAK SUMMARY:
+==14871==    definitely lost: 56 bytes in 1 blocks
+==14871==    indirectly lost: 0 bytes in 0 blocks
+==14871==      possibly lost: 0 bytes in 0 blocks
+==14871==    still reachable: 0 bytes in 0 blocks
+==14871==         suppressed: 0 bytes in 0 blocks
+==14871== 
+==14871== For lists of detected and suppressed errors, rerun with: -s
+==14871== ERROR SUMMARY: 7 errors from 4 contexts (suppressed: 0 from 0)
+[0;34mRunning test 21 >>>[0m
+Test 21 execution time: 14ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 22 >>>[0m
+Test 22 execution time: 2177ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 23 >>>[0m
+Test 23 execution time: 2241ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 24 >>>[0m
+Test 24 execution time: 10772ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 25 >>>[0m
+Test 25 execution time: 6745ms
+Test Simulation: [0;31mfail[0m
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;31mfail[0m
+
+==15291== Memcheck, a memory error detector
+==15291== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==15291== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==15291== Command: ./FileTester
+==15291== Parent PID: 14431
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8C8: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F307: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E98C: AVLTree<PirateRank>::get(PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8C8: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B7A9: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F324: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B7D6: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F324: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E98C: AVLTree<PirateRank>::get(PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B800: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F324: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E98C: AVLTree<PirateRank>::get(PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8C8: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EEDB: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E8ED: AVLTree<PirateRank>::remove(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B7D6: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F08D: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E8ED: AVLTree<PirateRank>::remove(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B800: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F08D: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E8ED: AVLTree<PirateRank>::remove(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8D6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F4AA: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EAC6: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8D6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B7A9: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B7E4: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EAC6: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B80E: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EAC6: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x5292fec is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8F4: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F4AA: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x50e17d8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8F4: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B7A9: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x50e17d8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B838: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x50e17d8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8E6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EEDB: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28a78 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8E6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F307: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fb8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8D6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EEDB: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E8ED: AVLTree<PirateRank>::remove(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E27D: Ship::changePirateTreasure(Pirate*, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10AE68: Ocean::update_pirate_treasure(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FD8A: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fbc is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B7E4: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F08D: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E8ED: AVLTree<PirateRank>::remove(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E27D: Ship::changePirateTreasure(Pirate*, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10AE68: Ocean::update_pirate_treasure(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FD8A: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fbc is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B80E: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F08D: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E8ED: AVLTree<PirateRank>::remove(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E27D: Ship::changePirateTreasure(Pirate*, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10AE68: Ocean::update_pirate_treasure(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FD8A: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fbc is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8F4: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EEDB: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fb8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4BD: Pirate::updateTreasure(int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E29F: Ship::changePirateTreasure(Pirate*, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10AE68: Ocean::update_pirate_treasure(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FD8A: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fbc is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid write of size 4
+==15291==    at 0x10A4C9: Pirate::updateTreasure(int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E29F: Ship::changePirateTreasure(Pirate*, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10AE68: Ocean::update_pirate_treasure(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FD8A: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fbc is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8C8: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F4AA: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EAC6: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E2C9: Ship::changePirateTreasure(Pirate*, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10AE68: Ocean::update_pirate_treasure(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FD8A: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fbc is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B7D6: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EAC6: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E2C9: Ship::changePirateTreasure(Pirate*, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10AE68: Ocean::update_pirate_treasure(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FD8A: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fbc is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4F6: Pirate::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B98F: PirateRank::getTreasure() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B800: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10EAC6: AVLTree<PirateRank>::insert(PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10E2C9: Ship::changePirateTreasure(Pirate*, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10AE68: Ocean::update_pirate_treasure(int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FD8A: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fbc is 12 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8E6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F4AA: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fb8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B8E6: PirateRank::operator==(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B7A9: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fb8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B82A: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F537: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F57B: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F556: AVLTree<PirateRank>::insertNode(AVLTree<PirateRank>::Node*, AVLTree<PirateRank>::Node*) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x4f28fb8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B838: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F08D: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F070: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x51d9708 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B82A: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F324: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F360: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F343: AVLTree<PirateRank>::search(AVLTree<PirateRank>::Node*, PirateRank const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x523eaa8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== Invalid read of size 4
+==15291==    at 0x10A4E0: Pirate::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B96D: PirateRank::getId() const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10B82A: PirateRank::operator<(Comparable const&) const (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F08D: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0D1: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10F0AC: AVLTree<PirateRank>::removeNode(AVLTree<PirateRank>::Node*, PirateRank const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Address 0x523eaa8 is 8 bytes inside a block of size 56 free'd
+==15291==    at 0x484B8AF: operator delete(void*) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10D7A7: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D878: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8D9: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10D8B4: AVLTree<Pirate>::removeNode(AVLTree<Pirate>::Node*, Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==  Block was alloc'd at
+==15291==    at 0x4849013: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==15291==    by 0x10C1B9: AVLTree<Pirate>::insert(Pirate const&) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10A91D: Ocean::add_pirate(int, int, int) (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291==    by 0x10FBF2: main (in /mnt/c/Users/Maxim/Desktop/stuff/c/DS/HW1/mivney_wet1/code/test/FileTester)
+==15291== 
+==15291== 
+==15291== HEAP SUMMARY:
+==15291==     in use at exit: 0 bytes in 0 blocks
+==15291==   total heap usage: 208,943 allocs, 208,943 frees, 9,468,483 bytes allocated
+==15291== 
+==15291== All heap blocks were freed -- no leaks are possible
+==15291== 
+==15291== For lists of detected and suppressed errors, rerun with: -s
+==15291== ERROR SUMMARY: 16031 errors from 31 contexts (suppressed: 0 from 0)
+[0;34mRunning test 26 >>>[0m
+Test 26 execution time: 8644ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 27 >>>[0m
+Test 27 execution time: 19840ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;31mfail[0m
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 28 >>>[0m
+Test 28 execution time: 20981ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;31mfail[0m
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 29 >>>[0m
+Test 29 execution time: 41035ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;31mfail[0m
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 30 >>>[0m
+Test 30 execution time: 25533ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;31mfail[0m
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 31 >>>[0m
+Test 31 execution time: 42ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 32 >>>[0m
+Test 32 execution time: 43007ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;31mfail[0m
+Memory Leak: [0;32mpass[0m
+
+[0;34mRunning test 33 >>>[0m
+Test 33 execution time: 10ms
+Test Simulation: [0;32mpass[0m,
+Time Complexity (≤ 15 sec): [0;32mpass[0m,
+Memory Leak: [0;32mpass[0m
+
+[0;31m
+ _____    ______  _______  ______     ______  _______  ______   _    _   ______ _______  _    _   ______   ______  ______    1
+| | \ \  | |  | |   | |   | |  | |   / |        | |   | |  | \ | |  | | | |       | |   | |  | | | |  | \ | |     / |
+| |  | | | |__| |   | |   | |__| |   '------.   | |   | |__| | | |  | | | |       | |   | |  | | | |__| | | |---- '------.
+|_|_/_/  |_|  |_|   |_|   |_|  |_|    ____|_/   |_|   |_|  \_\ \_|__|_| |_|____   |_|   \_|__|_| |_|  \_\ |_|____  ____|_/
+
+ _   _   _   ______ _______   1   ______   ______   ______  _____  ______   ______    2024
+| | | | | | | |       | |        / |      | |  | \ | |  | \  | |  | |  \ \ | | ____
+| | | | | | | |----   | |        '------. | |__|_/ | |__| |  | |  | |  | | | |  | |
+|_|_|_|_|_/ |_|____   |_|         ____|_/ |_|      |_|  \_\ _|_|_ |_|  |_| |_|__|_
+    
+
+[0;31mFailed 15 tests.[0m
+Failed tests: 
+1 
+1 2 
+2 3 
+3 20 
+20 25 
+25 27 28 29 30 32 [0m
+
+To see the differences for a failed test, use the diff.sh script. For example:
+[0;34m./diff.sh <test_number>[0m
+Make sure you have given execute permission to the script before using it. Run the following command to do so:
+[0;34mchmod +x diff.sh[0m
+Increase TESTS_TO_RUN in tester.sh to run more tests.
