@@ -4,6 +4,8 @@
 #include "../wet1util.h"
 #include "comparable.h"
 #include <iostream>
+#include <sstream>
+#include <string>
 
 using namespace std;
 
@@ -21,29 +23,20 @@ public:
     void printInOrder() const;
 
 private:
-    class AVLTreeException : std::exception {
-    private:
-        std::string n_message;
-    public:
-        // Constructor
-        explicit AVLTreeException(const std::string& msg) : n_message(msg) {}
-
-        // Override the what() method
-        virtual const char* what() const noexcept override {
-            return n_message.c_str();
-        }
-    };
     struct Node {
-        T key;
+        T* key;
         Node *left;
         Node *right;
         int height;
-        Node(const T& key) : key(key), left(nullptr), right(nullptr), height(1) {}
+        Node(const T& key) : key(new T(key)), left(nullptr), right(nullptr), height(1) {}
+        ~Node() {
+            delete key;
+        }
     };
     int m_size;
     Node *m_root;
-    Node* insertNode(Node *root, Node *node);
-    Node* removeNode(Node *root,const T& key);
+    output_t<Node*> insertNode(Node *root, Node *node);
+    output_t<Node*> removeNode(Node *root,const T& key);
     Node* minValueNode(Node* node) const;
     Node* maxValueNode(Node* node) const;
     int getHeight(const Node *node) const;
@@ -53,7 +46,7 @@ private:
     void deleteTree(Node *node);
     void updateHeight(Node* node);
     void printInOrderRecursive(const Node *node) const;
-    Node* search(Node* node, const T& key) const;
+    output_t<Node*> search(Node* node, const T& key) const;
 };
 
 template<typename T>
@@ -71,8 +64,9 @@ int AVLTree<T>::size() const{
 
 template<typename T>
 void AVLTree<T>::printInOrder()const{
+    std::cout << "Tree (with size " << m_size << ") { ";
     printInOrderRecursive(m_root);
-    std::cout << std::endl;
+    std::cout << "}" << std::endl;
 }
 
 template<typename T>
@@ -87,11 +81,12 @@ template<typename T>
 output_t<T*> AVLTree<T>::insert(const T& key){
     try{
         Node* newNode = new Node(key);
-        m_root=insertNode(m_root,newNode);
+        T* output = newNode->key;
+        output_t<Node*> result=insertNode(m_root,newNode);
+        if (result.status() != StatusType::SUCCESS) return result.status();
+        m_root=result.ans();
         m_size += 1;
-        return &(newNode->key);
-    } catch (const AVLTreeException& e){
-        return StatusType::FAILURE;
+        return output;
     } catch (...) {
         return StatusType::ALLOCATION_ERROR;
     }
@@ -99,13 +94,21 @@ output_t<T*> AVLTree<T>::insert(const T& key){
 }
 
 template<typename T>
-typename AVLTree<T>::Node* AVLTree<T>::insertNode(Node *root, Node *node){
+output_t<typename AVLTree<T>::Node*> AVLTree<T>::insertNode(Node *root, Node *node){
     if(!root) return node;
-    if (node->key == root->key) {
-        throw AVLTreeException("Node key matches root key");
+    if (*(node->key) == *(root->key)) {
+        return StatusType::FAILURE;
     }
-    if(node->key < root->key) root->left = insertNode(root->left, node);
-    else root->right = insertNode(root->right, node);
+    if(*(node->key) < *(root->key)) {
+        output_t<Node*> result = insertNode(root->left, node);
+        if (result.status() != StatusType::SUCCESS) return result.status();
+        root->left = result.ans();
+    }
+    else {
+        output_t<Node*> result = insertNode(root->right, node);
+        if (result.status() != StatusType::SUCCESS) return result.status();
+        root->right = result.ans();
+    }
     updateHeight(root);
 
     int balance = getBalance(root);
@@ -126,23 +129,18 @@ typename AVLTree<T>::Node* AVLTree<T>::insertNode(Node *root, Node *node){
 
 template<typename T>
 StatusType AVLTree<T>::remove(const T& key){
-    try{
-        m_root=removeNode(m_root,key);
-        m_size -= 1;
-    } catch(const AVLTreeException& e) {
-        return StatusType::FAILURE;
-    } catch(...) {
-        return StatusType::ALLOCATION_ERROR;
-    }
+    output_t<Node*> result = removeNode(m_root,key);
+    if (result.status() != StatusType::SUCCESS) return result.status();
+    --m_size;
     return StatusType::SUCCESS;
 }
 
 template<typename T>
-typename AVLTree<T>::Node* AVLTree<T>::removeNode(Node *root,const T& key){
-    if(!root) throw AVLTreeException("Error: key is not in any node of the tree.");
-    if(root->key == key){
-        if (!(root->key.isRemovable())) throw AVLTreeException("Cannot remove");
-        if(root->left==nullptr && root->right==nullptr){
+output_t<typename AVLTree<T>::Node*> AVLTree<T>::removeNode(Node *root,const T& key){
+    if(!root) return StatusType::FAILURE;
+    if(*(root->key) == key){
+        if (!(root->key->isRemovable())) return StatusType::FAILURE;
+        else if(root->left==nullptr && root->right==nullptr){
             delete(root);
             return nullptr;
         }else if(root->left==nullptr){
@@ -157,13 +155,25 @@ typename AVLTree<T>::Node* AVLTree<T>::removeNode(Node *root,const T& key){
             //changing value of the root to the value of min node in the right tree
             //then removing the duplicate
             Node* newRoot = minValueNode(root->right);
-            root->key=newRoot->key;
-            root->right=removeNode(root->right,root->key);
+            T* temp = root->key;
+            root->key = newRoot->key;
+            newRoot->key = temp;
+            output_t<Node*> result = removeNode(root->right, *temp);
+            if (result.status() != StatusType::SUCCESS) {
+                newRoot->key = root->key;
+                root->key = temp;
+                return result.status();
+            }
+            root->right= result.ans();
         }
-    }else if(root->key < key){
-        root->right=removeNode(root->right,key);
+    }else if(*(root->key) < key){
+        output_t<Node*> result = removeNode(root->right,key);
+        if (result.status() != StatusType::SUCCESS) return result.status();
+        root->right=result.ans();
     }else{
-        root->left=removeNode(root->left,key);
+        output_t<Node*> result = removeNode(root->left,key);
+        if (result.status() != StatusType::SUCCESS) return result.status();
+        root->left=result.ans();
     }
 
     updateHeight(root);
@@ -244,19 +254,17 @@ void AVLTree<T>::printInOrderRecursive(const Node *node)const{
         return;
     }
     printInOrderRecursive(node->left);
-    std::cout << node->key << " ";
+    std::cout << *(node->key) << " ";
     printInOrderRecursive(node->right);
 }
 
 template<typename T>
 output_t<T*> AVLTree<T>::get(const T& key) const {
-    try {
-        return &(search(m_root,key)->key);
-    } catch(const AVLTreeException& e) {
-        return StatusType::FAILURE;
-    } catch(...) {
-        return StatusType::ALLOCATION_ERROR;
+    output_t<Node*> result = search(m_root,key);
+    if (result.status() != StatusType::SUCCESS) {
+        return result.status();
     }
+    return result.ans()->key;
 }
 
 template <typename T>
@@ -265,25 +273,25 @@ output_t<T*> AVLTree<T>::getMax() const
     if (m_root == nullptr) {
         return StatusType::FAILURE;
     }
-    return &(maxValueNode(m_root)->key);// this is a safe-operation
+    return maxValueNode(m_root)->key;// this is a safe-operation
 }
 
 template <typename T>
-output_t<T *> AVLTree<T>::getMin() const
+output_t<T*> AVLTree<T>::getMin() const
 {
     if (m_root == nullptr) {
         return StatusType::FAILURE;
     }
-    return &(minValueNode(m_root)->key);// this is a safe-operation
+    return minValueNode(m_root)->key;// this is a safe-operation
 }
 
 template<typename T>
-typename AVLTree<T>::Node* AVLTree<T>::search(Node *node, const T& key) const {
-    if(!node) throw AVLTreeException("Error: key was not found in the tree.");
-    if(node->key==key){
+output_t<typename AVLTree<T>::Node*> AVLTree<T>::search(Node *node, const T& key) const {
+    if(!node) return StatusType::FAILURE;
+    if(*(node->key)==key){
         return node;
     }
-    else if(node->key < key){
+    else if(*(node->key) < key){
         return search(node->right, key);
     }
     else{

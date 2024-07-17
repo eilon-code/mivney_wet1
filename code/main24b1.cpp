@@ -59,6 +59,10 @@ int main()
         } else if (!op.compare("ships_battle")) {
             cin >> d1 >> d2;
             print(op, obj->ships_battle(d1, d2));
+        } else if (!op.compare("print_pirates")) {
+            print(op, obj->printPirates());
+        } else if (!op.compare("print_ships")) {
+            print(op, obj->printShips());
         } else {
             cout << "Unknown command: " << op << endl;
             return -1;

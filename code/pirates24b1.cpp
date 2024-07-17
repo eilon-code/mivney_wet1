@@ -2,7 +2,19 @@
 #include "pirate.h"
 #include "ship.h"
 
-Ocean::Ocean(){}
+StatusType Ocean::printPirates()
+{
+    m_pirateTree.printInOrder();
+    return StatusType::SUCCESS;
+}
+
+StatusType Ocean::printShips()
+{
+    m_shipTree.printInOrder();
+    return StatusType::SUCCESS;
+}
+
+Ocean::Ocean() {}
 
 Ocean::~Ocean()=default;
 

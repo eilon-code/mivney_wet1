@@ -29,7 +29,10 @@ private:
     
 public:
     // <DO-NOT-MODIFY> {
-    
+    StatusType printPirates();
+
+    StatusType printShips();
+
     Ocean();
 
     virtual ~Ocean();
