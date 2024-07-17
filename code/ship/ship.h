@@ -1,11 +1,11 @@
 #ifndef SHIP_H
 #define SHIP_H
 
-#include "../pirate/pirate.h"
-#include "../pirate/pirate_rank.h"
-#include "../search_tree/comparable.h"
-#include "../search_tree/avl_tree.h"
-#include "../linked_list/linked_list.h"
+#include "pirate.h"
+#include "pirate_rank.h"
+#include "comparable.h"
+#include "avl_tree.h"
+#include "linked_list.h"
 
 class Ship : public Comparable {
 public:
@@ -84,7 +84,7 @@ private:
     int m_cannons;
     int m_coinOffset;
     List<Pirate*> m_piratesOnShip; // ordered by time on ship
-    AVLTree<PirateRank> m_piratesOnShipOrderedByRichness;
+    // AVLTree<PirateRank> m_piratesOnShipOrderedByRichness;
     Pirate* m_richestPirate;
 
     StatusType insertPirate(Pirate* pirate);

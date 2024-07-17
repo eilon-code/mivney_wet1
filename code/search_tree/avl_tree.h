@@ -1,7 +1,7 @@
 #ifndef AVLTREE_H
 #define AVLTREE_H
 
-#include "../wet1util.h"
+#include "wet1util.h"
 #include "comparable.h"
 #include <iostream>
 #include <sstream>
@@ -26,13 +26,11 @@ public:
 private:
     struct Node {
         T* key;
+        bool removable;
         Node *left;
         Node *right;
         int height;
-        Node(const T& key) : key(new T(key)), left(nullptr), right(nullptr), height(1) {}
-        ~Node() {
-            delete key;
-        }
+        Node(T* key) : key(key), removable(true), left(nullptr), right(nullptr), height(1) {}
     };
     int m_size;
     Node *m_root;
@@ -76,16 +74,21 @@ void AVLTree<T>::deleteTree(Node *node){
     if(!node)return;
     deleteTree(node->left);
     deleteTree(node->right);
+    delete(node->key);
     delete(node);
 }
 
 template<typename T>
 output_t<T*> AVLTree<T>::insert(const T& key){
     try{
-        Node* newNode = new Node(key);
-        T* output = newNode->key;
+        T* output = new T(key);
+        Node* newNode = new Node(output);
         output_t<Node*> result=insertNode(m_root,newNode);
-        if (result.status() != StatusType::SUCCESS) return result.status();
+        if (result.status() != StatusType::SUCCESS) {
+            delete output;
+            delete newNode;
+            return result.status();
+        }
         m_root=result.ans();
         m_size += 1;
         return output;
@@ -131,9 +134,14 @@ output_t<typename AVLTree<T>::Node*> AVLTree<T>::insertNode(Node *root, Node *no
 
 template<typename T>
 StatusType AVLTree<T>::remove(const T& key){
-    output_t<Node*> result = removeNode(m_root,key);
-    if (result.status() != StatusType::SUCCESS) return result.status();
-    --m_size;
+    try{
+        output_t<Node*> result = removeNode(m_root,key);
+        if (result.status() != StatusType::SUCCESS) return result.status();
+        --m_size;
+        m_root = result.ans();
+    } catch(...) {
+        return StatusType::ALLOCATION_ERROR;
+    }
     return StatusType::SUCCESS;
 }
 
@@ -142,30 +150,32 @@ output_t<typename AVLTree<T>::Node*> AVLTree<T>::removeNode(Node *root,const T& 
     if(!root) return StatusType::FAILURE;
     if(*(root->key) == key){
         if (!(root->key->isRemovable())) return StatusType::FAILURE;
-        else if(root->left==nullptr && root->right==nullptr){
+        if(root->left==nullptr && root->right==nullptr){
+            if (root->removable) delete(root->key);
             delete(root);
             return nullptr;
         }else if(root->left==nullptr){
             Node *temp = root->right;
+            if (root->removable) delete(root->key);
             delete(root);
             root=temp;
         }else if(root->right==nullptr){
             Node *temp = root->left;
+            if (root->removable) delete(root->key);
             delete(root);
             root=temp;
         }else{
             //changing value of the root to the value of min node in the right tree
             //then removing the duplicate
             Node* newRoot = minValueNode(root->right);
-            T* temp = root->key;
-            root->key = newRoot->key;
-            newRoot->key = temp;
+            T* temp = newRoot->key;
+            newRoot->removable = false;
             output_t<Node*> result = removeNode(root->right, *temp);
             if (result.status() != StatusType::SUCCESS) {
-                newRoot->key = root->key;
-                root->key = temp;
                 return result.status();
             }
+            delete root->key;
+            root->key = temp;
             root->right= result.ans();
         }
     }else if(*(root->key) < key){
@@ -286,18 +296,23 @@ void AVLTree<T>::printTree(Node *node, int space) const
     {
         std::cout << " ";
     }
-    std::cout << (node->key).getId() << "\n";
+    std::cout << (node->key)->getId() << "\n";
 
     printTree(node->left, space);
 }
 
 template<typename T>
 output_t<T*> AVLTree<T>::get(const T& key) const {
-    output_t<Node*> result = search(m_root,key);
-    if (result.status() != StatusType::SUCCESS) {
-        return result.status();
+    try {
+        output_t<Node*> result = search(m_root,key);
+        if (result.status() != StatusType::SUCCESS) {
+            return result.status();
+        }
+        return result.ans()->key;
+    } catch(...) {
+        return StatusType::ALLOCATION_ERROR;
     }
-    return result.ans()->key;
+    return StatusType::INVALID_INPUT;
 }
 
 template <typename T>

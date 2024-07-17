@@ -38,6 +38,11 @@ public:
         return m_pirate->getId();
     }
 
+    // Overload the << operator for PirateRank
+    friend std::ostream& operator<<(std::ostream& os, const PirateRank& pr) {
+        return os;
+    }
+
     int getTreasure() const {
         return m_pirate->getTreasure();
     }
