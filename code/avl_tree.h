@@ -20,7 +20,7 @@ public:
     output_t<T*> getMin() const;
     output_t<T*> insert(const T& key);
     StatusType remove(const T& key);
-    void printInOrder() const;
+    void printInOrder(std::ostream& os) const;
     void print() const;
 
 private:
@@ -44,7 +44,7 @@ private:
     Node* rotateLeft(Node *node);
     void deleteTree(Node *node);
     void updateHeight(Node* node);
-    void printInOrderRecursive(const Node *node) const;
+    void printInOrderRecursive(std::ostream& os, const Node *node) const;
     void printTree(Node *node, int space) const;
     output_t<Node*> search(Node* node, const T& key) const;
 };
@@ -63,10 +63,10 @@ int AVLTree<T>::size() const{
 }
 
 template<typename T>
-void AVLTree<T>::printInOrder()const{
-    std::cout << "Tree (with size " << m_size << ") { ";
-    printInOrderRecursive(m_root);
-    std::cout << "}" << std::endl;
+void AVLTree<T>::printInOrder(std::ostream& os)const{
+    os << "Tree (with size " << m_size << ") { ";
+    printInOrderRecursive(os, m_root);
+    os << "}";
 }
 
 template<typename T>
@@ -261,13 +261,13 @@ int AVLTree<T>::getBalance(const Node *node)const{
 }
 
 template<typename T>
-void AVLTree<T>::printInOrderRecursive(const Node *node)const{
+void AVLTree<T>::printInOrderRecursive(std::ostream& os, const Node *node)const{
     if(node==nullptr){
         return;
     }
-    printInOrderRecursive(node->left);
-    std::cout << *(node->key) << " ";
-    printInOrderRecursive(node->right);
+    printInOrderRecursive(os, node->left);
+    os << *(node->key);
+    printInOrderRecursive(os, node->right);
 }
 
 template <typename T>

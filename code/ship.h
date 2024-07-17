@@ -73,7 +73,11 @@ public:
         os << "    Ship ID: " << key.getId() << ", Pirates On Ship:" << key.getPiratesOnShip() << std::endl;
         os << "    Pirates on ship (input order) { ";
         os << key.m_piratesOnShip;
+        os << "}" << std::endl;
+        os << "    Pirates on ship (richness order) { ";
+        key.m_piratesOnShipOrderedByRichness.printInOrder(os);
         os << "}";
+        
         os << std::endl;
         os << "    IsRemovable? " << key.isRemovable() << endl;
         return os;
@@ -84,7 +88,7 @@ private:
     int m_cannons;
     int m_coinOffset;
     List<Pirate*> m_piratesOnShip; // ordered by time on ship
-    // AVLTree<PirateRank> m_piratesOnShipOrderedByRichness;
+    AVLTree<PirateRank> m_piratesOnShipOrderedByRichness;
     Pirate* m_richestPirate;
 
     StatusType insertPirate(Pirate* pirate);

@@ -39,7 +39,9 @@ public:
     }
 
     // Overload the << operator for PirateRank
-    friend std::ostream& operator<<(std::ostream& os, const PirateRank& pr) {
+    friend std::ostream& operator<<(std::ostream& os, const PirateRank& key) {
+        os << std::endl;
+        os << "        Pirate ID: " << key.getId() << ", Ship ID:" << key.getPiratePointer()->getShipId() << std::endl;
         return os;
     }
 

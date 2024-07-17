@@ -2,13 +2,15 @@
 
 StatusType Ocean::printPirates()
 {
-    m_pirateTree.printInOrder();
+    m_pirateTree.printInOrder(std::cout);
+    std::cout<<endl;
     return StatusType::SUCCESS;
 }
 
 StatusType Ocean::printShips()
 {
-    m_shipTree.printInOrder();
+    m_shipTree.printInOrder(std::cout);
+    std::cout<<endl;
     return StatusType::SUCCESS;
 }
 
