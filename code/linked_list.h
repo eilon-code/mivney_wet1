@@ -34,8 +34,7 @@ public:
         }
         while (iterator!=nullptr) {
             os << " ";
-            os << iterator->data;
-            os << ";";
+            os << *(iterator->data) << ";";
             iterator=iterator->next;
         }
         os << " ]";
