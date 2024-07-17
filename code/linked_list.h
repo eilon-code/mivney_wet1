@@ -37,7 +37,7 @@ public:
             os << *(iterator->data) << ";";
             iterator=iterator->next;
         }
-        os << " ]";
+        os << " ] ";
         return os;
     }
 private:

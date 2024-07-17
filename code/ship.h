@@ -70,7 +70,7 @@ public:
     // Overload the << operator for Key
     friend std::ostream& operator<<(std::ostream& os, const Ship& key) {
         os << std::endl;
-        os << "    Ship ID: " << key.getId() << ", Pirates On Ship:" << key.getPiratesOnShip() << std::endl;
+        os << "    Ship ID: " << key.getId() << ", Pirates On Ship: " << key.getPiratesOnShip() << std::endl;
         os << "    Pirates on ship (input order) { ";
         os << key.m_piratesOnShip;
         os << "}" << std::endl;
