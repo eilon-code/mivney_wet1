@@ -80,7 +80,7 @@ StatusType Ocean::remove_pirate(int pirateId)
 
 StatusType Ocean::treason(int sourceShipId, int destShipId)
 {
-    if (sourceShipId <= 0 || destShipId <= 0) {
+    if (sourceShipId <= 0 || destShipId <= 0 || sourceShipId == destShipId) {
         return StatusType::INVALID_INPUT;
     }
 
