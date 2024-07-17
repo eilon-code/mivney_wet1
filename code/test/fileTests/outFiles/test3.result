@@ -9,6 +9,6 @@ add_pirate: SUCCESS
 get_richest_pirate: SUCCESS, 3
 remove_pirate: SUCCESS
 remove_pirate: SUCCESS
-remove_pirate: FAILURE
+remove_pirate: SUCCESS
 remove_pirate: SUCCESS
 get_richest_pirate: FAILURE

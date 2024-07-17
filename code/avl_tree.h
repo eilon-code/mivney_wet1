@@ -172,6 +172,7 @@ output_t<typename AVLTree<T>::Node*> AVLTree<T>::removeNode(Node *root,const T& 
             newRoot->removable = false;
             output_t<Node*> result = removeNode(root->right, *temp);
             if (result.status() != StatusType::SUCCESS) {
+                newRoot->removable = true;
                 return result.status();
             }
             delete root->key;

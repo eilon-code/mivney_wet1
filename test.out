@@ -24,69 +24,8 @@ get_treasure: SUCCESS, 6
 update_pirate_treasure: SUCCESS
 get_treasure: SUCCESS, 10
 remove_pirate: FAILURE
-Tree (with size 3) { 
-    Ship ID: 1, Pirates On Ship: 3
-    Pirates on ship (input order) { List: [ 
-    Pirate ID: 4, Ship ID:1
-; 
-    Pirate ID: 5, Ship ID:1
-; 
-    Pirate ID: 6, Ship ID:1
-; ] }
-    Pirates on ship (richness order) { Tree (with size 3) { 
-        Pirate ID: 5, Ship ID:1
-        Pirate ID: 6, Ship ID:1
-        Pirate ID: 4, Ship ID:1}}
-    IsRemovable? 0
-
-    Ship ID: 2, Pirates On Ship: 1
-    Pirates on ship (input order) { List: [ 
-    Pirate ID: 7, Ship ID:2
-; ] }
-    Pirates on ship (richness order) { Tree (with size 1) { 
-        Pirate ID: 7, Ship ID:2}}
-    IsRemovable? 0
-
-    Ship ID: 234, Pirates On Ship: 1
-    Pirates on ship (input order) { List: [ 
-    Pirate ID: 3, Ship ID:234
-; ] }
-    Pirates on ship (richness order) { Tree (with size 1) { 
-        Pirate ID: 3, Ship ID:234}}
-    IsRemovable? 0
-}
-print_ships: SUCCESS
 remove_ship: FAILURE
 remove_pirate: SUCCESS
-Tree (with size 3) { 
-    Ship ID: 1, Pirates On Ship: 3
-    Pirates on ship (input order) { List: [ 
-    Pirate ID: 4, Ship ID:1
-; 
-    Pirate ID: 5, Ship ID:1
-; 
-    Pirate ID: 6, Ship ID:1
-; ] }
-    Pirates on ship (richness order) { Tree (with size 3) { 
-        Pirate ID: 5, Ship ID:1
-        Pirate ID: 6, Ship ID:1
-        Pirate ID: 4, Ship ID:1}}
-    IsRemovable? 0
-
-    Ship ID: 2, Pirates On Ship: 0
-    Pirates on ship (input order) { List: [Empty; ]}
-    Pirates on ship (richness order) { Tree (with size 0) { }}
-    IsRemovable? 1
-
-    Ship ID: 234, Pirates On Ship: 1
-    Pirates on ship (input order) { List: [ 
-    Pirate ID: 3, Ship ID:234
-; ] }
-    Pirates on ship (richness order) { Tree (with size 1) { 
-        Pirate ID: 3, Ship ID:234}}
-    IsRemovable? 0
-}
-print_ships: SUCCESS
 remove_ship: FAILURE
 get_treasure: INVALID_INPUT
 get_treasure: INVALID_INPUT

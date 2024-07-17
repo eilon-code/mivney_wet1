@@ -24,10 +24,8 @@ get_treasure 4
 update_pirate_treasure 4 4
 get_treasure 4
 remove_pirate 8
-print_ships
 remove_ship 2
 remove_pirate 7
-print_ships
 remove_ship 2
 get_treasure 0
 get_treasure -1

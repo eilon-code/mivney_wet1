@@ -14,5 +14,5 @@ treason: SUCCESS
 get_richest_pirate: SUCCESS, 2
 add_pirate: FAILURE
 get_richest_pirate: SUCCESS, 2
-treason: FAILURE
+treason: SUCCESS
 get_richest_pirate: FAILURE
