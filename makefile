@@ -4,10 +4,10 @@ CXX = g++
 
 # Directories
 DIR = code/
-PIRATE_DIR = $(DIR)pirate/
-SHIP_DIR = $(DIR)ship/
-LIST_DIR = $(DIR)linked_list/
-TREE_DIR = $(DIR)search_tree/
+PIRATE_DIR = $(DIR)
+SHIP_DIR = $(DIR)
+LIST_DIR = $(DIR)
+TREE_DIR = $(DIR)
 BUILD_DIR = build/
 
 # Source files
@@ -34,7 +34,7 @@ EXEC = prog
 # Flags
 DEBUG_FLAG = # Leave empty, assign -g for debug
 COMP_FLAG = -std=c++11 -Wall -Werror
-INCLUDE_FLAGS = -I$(DIR) -I$(PIRATE_DIR) -I$(SHIP_DIR) -I$(TREE_DIR) -I$(LIST_DIR)
+INCLUDE_FLAGS = -I$(DIR)
 
 # Default target
 $(EXEC): $(OBJS)
