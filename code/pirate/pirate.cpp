@@ -21,3 +21,8 @@ void Pirate::replaceShip(Ship* newShip) {
     m_treasure += (m_ship != nullptr ? m_ship->getBalance() : 0);
     m_ship = newShip;
 }
+
+int Pirate::getShipId() const
+{
+    return m_ship->getId();
+}

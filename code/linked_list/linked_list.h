@@ -23,6 +23,24 @@ public:
     int size() const {
         return m_size;
     }
+
+    // Overload the << operator for Key
+    friend std::ostream& operator<<(std::ostream& os, const List& key) {
+        os << "List: [";
+        Node* iterator = key.m_head;
+        if (iterator == nullptr) {
+            os << "Empty; ]";
+            return os;
+        }
+        while (iterator!=nullptr) {
+            os << " ";
+            os << iterator->data;
+            os << ";";
+            iterator=iterator->next;
+        }
+        os << " ]";
+        return os;
+    }
 private:
     Node* m_head;
     Node* m_tail;

@@ -67,6 +67,18 @@ public:
     StatusType changePirateTreasure(Pirate* pirate, int change);
     output_t<Pirate*> removeVeteranPirate();
 
+    // Overload the << operator for Key
+    friend std::ostream& operator<<(std::ostream& os, const Ship& key) {
+        os << std::endl;
+        os << "    Ship ID: " << key.getId() << ", Pirates On Ship:" << key.getPiratesOnShip() << std::endl;
+        os << "    Pirates on ship (input order) { ";
+        os << key.m_piratesOnShip;
+        os << "}";
+        os << std::endl;
+        os << "    IsRemovable? " << key.isRemovable() << endl;
+        return os;
+    }
+
 private:
     int m_id;
     int m_cannons;
