@@ -149,7 +149,7 @@ template<typename T>
 output_t<typename AVLTree<T>::Node*> AVLTree<T>::removeNode(Node *root,const T& key){
     if(!root) return StatusType::FAILURE;
     if(*(root->key) == key){
-        if (!(root->key->isRemovable())) return StatusType::FAILURE;
+        if (!(root->key->isRemovable() || (!root->removable))) return StatusType::FAILURE;
         if(root->left==nullptr && root->right==nullptr){
             if (root->removable) delete(root->key);
             delete(root);

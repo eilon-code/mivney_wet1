@@ -4,7 +4,6 @@ StatusType Ship::removePirate(Pirate* pirate)
 {
     // assums the pirate indeed is in the ship.
     StatusType output = m_piratesOnShip.remove(pirate->getShipNode());
-    pirate->setShipNode(nullptr);
     if (output != StatusType::SUCCESS) {
         return output;
     }
@@ -34,7 +33,7 @@ StatusType Ship::changePirateTreasure(Pirate* pirate, int change)
     piratePointer->updateTreasure(change);
     PirateRank pirateRankNew(piratePointer);
     m_piratesOnShipOrderedByRichness.insert(pirateRankNew); // should work, because deletion of the same object worked
-    return StatusType::SUCCESS;
+    return updateRichestPirate();
 }
 
 output_t<Pirate*> Ship::removeVeteranPirate()
