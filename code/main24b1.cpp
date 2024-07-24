@@ -16,6 +16,7 @@ using namespace std;
 
 void print(string cmd, StatusType res);
 void print(string cmd, output_t<int> res);
+void print_avl_tree(const Ocean &ocean);
 
 int main()
 {
@@ -59,6 +60,93 @@ int main()
         } else if (!op.compare("ships_battle")) {
             cin >> d1 >> d2;
             print(op, obj->ships_battle(d1, d2));
+        } else if (!op.compare("print_pirates")) {
+            print(op, obj->printPirates());
+        } else if (!op.compare("print_ships")) {
+            print(op, obj->printShips());
+        }
+        else if (!op.compare("avl_ll")) {
+            cout << "before LL" << endl;
+            obj->add_ship(12, 12);
+            obj->add_ship(8, 8);
+            obj->add_ship(15, 15);
+            obj->add_ship(6, 6);
+            obj->add_ship(10, 10);
+            obj->add_ship(14, 14);
+            obj->add_ship(24, 24);
+            obj->add_ship(4, 4);
+            obj->add_ship(11, 11);
+            obj->add_ship(13, 13);
+            obj->add_ship(20, 20);
+            obj->add_ship(29, 29);
+            obj->add_ship(19, 19);
+            print_avl_tree(*obj);
+            cout << "after LL" << endl;
+            obj->add_ship(18, 18); // Simulate add_ship that should trigger LL rotation
+            print_avl_tree(*obj);
+        }
+        else if (!op.compare("avl_lr")) {
+            cout << "before LR" << endl;
+            obj->add_ship(15, 15);
+            obj->add_ship(10, 10);
+            obj->add_ship(20, 20);
+            obj->add_ship(6, 6);
+            obj->add_ship(13, 13);
+            obj->add_ship(17, 17);
+            obj->add_ship(24, 24);
+            obj->add_ship(4, 4);
+            obj->add_ship(7, 7);
+            obj->add_ship(12, 12);
+            obj->add_ship(14, 14);
+            print_avl_tree(*obj);
+            cout << "after LR" << endl;
+            obj->add_ship(11, 11); // Simulate add_ship that should trigger LR rotation
+            print_avl_tree(*obj);
+        }
+        else if (!op.compare("avl_rl")) {
+            cout << "before RL" << endl;
+            obj->add_ship(11, 11);
+            obj->add_ship(8, 8);
+            obj->add_ship(19, 19);
+            obj->add_ship(6, 6);
+            obj->add_ship(10, 10);
+            obj->add_ship(13, 13);
+            obj->add_ship(25, 25);
+            obj->add_ship(12, 12);
+            obj->add_ship(17, 17);
+            obj->add_ship(23, 23);
+            obj->add_ship(29, 29);
+            print_avl_tree(*obj);
+            cout << "after RL" << endl;
+            obj->add_ship(15, 15); // Simulate add_ship that should trigger RL rotation
+            print_avl_tree(*obj);
+        }
+        else if (!op.compare("avl_rr")) {
+            obj->add_ship(10, 10);
+            obj->add_ship(5, 5);
+            obj->add_ship(20, 20);
+            obj->add_ship(30, 30);
+            obj->add_ship(40, 40); // Simulate add_ship that should trigger RR rotation
+            print_avl_tree(*obj);
+        }
+        else if (!op.compare("avl_remove")) {
+            cout << "before remove" << endl;
+            obj->add_ship(5, 5);
+            obj->add_ship(2, 2);
+            obj->add_ship(8, 8);
+            obj->add_ship(1, 1);
+            obj->add_ship(4, 4);
+            obj->add_ship(6, 6);
+            obj->add_ship(10, 10);
+            obj->add_ship(3, 3);
+            obj->add_ship(7, 7);
+            obj->add_ship(9, 9);
+            obj->add_ship(12, 12);
+            obj->add_ship(11, 11);
+            print_avl_tree(*obj);
+            obj->remove_ship(1); // Assuming remove_ship
+            cout << "after remove" << endl;
+            print_avl_tree(*obj);
         } else {
             cout << "Unknown command: " << op << endl;
             return -1;
@@ -96,4 +184,9 @@ void print(string cmd, output_t<int> res)
     } else {
         cout << cmd << ": " << StatusTypeStr[(int) res.status()] << endl;
     }
+}
+
+void print_avl_tree(const Ocean &ocean)
+{
+    ocean.print_avl_tree();
 }

@@ -1,7 +1,6 @@
 #ifndef PIRATE_RANK_H
 #define PIRATE_RANK_H
 
-#include "comparable.h"
 #include "pirate.h"
 
 class PirateRank : public Comparable {
@@ -37,6 +36,11 @@ public:
 
     int getId() const {
         return m_pirate->getId();
+    }
+
+    // Overload the << operator for PirateRank
+    friend std::ostream& operator<<(std::ostream& os, const PirateRank& pr) {
+        return os;
     }
 
     int getTreasure() const {

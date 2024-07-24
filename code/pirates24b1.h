@@ -15,8 +15,8 @@
 
 #include "wet1util.h"
 #include "avl_tree.h"
-class Ship;
-class Pirate;
+#include "ship.h"
+#include "pirate.h"
 
 class Ocean {
 private:
@@ -29,10 +29,17 @@ private:
     
 public:
     // <DO-NOT-MODIFY> {
-    
+    StatusType printPirates();
+
+    StatusType printShips();
+
     Ocean();
 
     virtual ~Ocean();
+
+    void print_avl_tree() const {
+        m_shipTree.print();
+    }
     
     StatusType add_ship(int shipId, int cannons);
 

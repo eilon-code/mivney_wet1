@@ -1,7 +1,7 @@
 #ifndef PIRATE_H
 #define PIRATE_H
-#include "comparable.h"
-#include "linked_list.h"
+#include "../search_tree/comparable.h"
+#include "../linked_list/linked_list.h"
 
 class Ship;
 
@@ -25,6 +25,13 @@ public:
         return m_id == ((Pirate&) other).getId();
     }
 
+    // Overload the << operator for Key
+    friend std::ostream& operator<<(std::ostream& os, const Pirate& key) {
+        os << std::endl;
+        os << "    Pirate ID: " << key.getId() << ", Ship ID:" << key.getShipId() << std::endl;
+        return os;
+    }
+
     List<Pirate*>::Node* getShipNode() const {
         return m_pointerInShipList;
     }
@@ -32,6 +39,9 @@ public:
     void setShipNode(List<Pirate*>::Node* node) {
         m_pointerInShipList = node;
     }
+
+    int getShipId() const;
+
 private:
     int m_id;
     int m_treasure;

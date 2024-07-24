@@ -1,8 +1,20 @@
 #include "pirates24b1.h"
-#include "pirate.h"
-#include "ship.h"
 
-Ocean::Ocean(){}
+StatusType Ocean::printPirates()
+{
+    m_pirateTree.printInOrder(std::cout);
+    std::cout<<endl;
+    return StatusType::SUCCESS;
+}
+
+StatusType Ocean::printShips()
+{
+    m_shipTree.printInOrder(std::cout);
+    std::cout<<endl;
+    return StatusType::SUCCESS;
+}
+
+Ocean::Ocean() {}
 
 Ocean::~Ocean()=default;
 
@@ -68,7 +80,7 @@ StatusType Ocean::remove_pirate(int pirateId)
 
 StatusType Ocean::treason(int sourceShipId, int destShipId)
 {
-    if (sourceShipId <= 0 || destShipId <= 0) {
+    if (sourceShipId <= 0 || destShipId <= 0 || sourceShipId == destShipId) {
         return StatusType::INVALID_INPUT;
     }
 
