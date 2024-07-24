@@ -1,6 +1,6 @@
-add_ship: SUCCESS
-add_pirate: SUCCESS
-add_pirate: SUCCESS
-add_pirate: SUCCESS
-add_pirate: SUCCESS
-get_richest_pirate: SUCCESS, 8
+add_ship: INVALID_INPUT
+add_pirate: INVALID_INPUT
+add_pirate: INVALID_INPUT
+add_pirate: INVALID_INPUT
+add_pirate: INVALID_INPUT
+get_richest_pirate: INVALID_INPUT

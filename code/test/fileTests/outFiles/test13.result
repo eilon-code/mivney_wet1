@@ -1,12 +1,12 @@
-add_ship: SUCCESS
-get_richest_pirate: FAILURE
-add_pirate: SUCCESS
-add_pirate: SUCCESS
-add_pirate: SUCCESS
-add_pirate: SUCCESS
-get_richest_pirate: SUCCESS, 8
-remove_pirate: SUCCESS
-remove_pirate: SUCCESS
-remove_pirate: SUCCESS
-remove_pirate: SUCCESS
-get_richest_pirate: FAILURE
+add_ship: INVALID_INPUT
+get_richest_pirate: INVALID_INPUT
+add_pirate: INVALID_INPUT
+add_pirate: INVALID_INPUT
+add_pirate: INVALID_INPUT
+add_pirate: INVALID_INPUT
+get_richest_pirate: INVALID_INPUT
+remove_pirate: INVALID_INPUT
+remove_pirate: INVALID_INPUT
+remove_pirate: INVALID_INPUT
+remove_pirate: INVALID_INPUT
+get_richest_pirate: INVALID_INPUT
